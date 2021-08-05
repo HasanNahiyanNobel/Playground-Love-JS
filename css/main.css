@@ -6,8 +6,11 @@
 	font-family: Kalpurush, SolaimanLipi, serif;
 }
 
-h1, h2, h3 {
+h1, h2 {
 	font-weight: lighter;
+}
+
+h1 {
 	border-bottom: 1px solid dimgrey;
 }
 

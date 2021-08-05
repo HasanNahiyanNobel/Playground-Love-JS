@@ -6,6 +6,7 @@
 Currently following the tutorials of *The Net Ninja*, from the resources below:
 1. [HTML Playlist](https://www.youtube.com/playlist?list=PL4cUxeGkcC9ibZ2TSBaGGNrgh4ZgYE6Cc)
 2. [CSS Playlist](https://www.youtube.com/playlist?list=PL4cUxeGkcC9gQeDH6xYhmO-db2mhoTSrT)
+3. [JavaScript PlayList](https://www.youtube.com/playlist?list=PL4cUxeGkcC9i9Ae2D9Ee1RvylH38dKuET)
 
 
 
@@ -110,3 +111,53 @@ Currently following the tutorials of *The Net Ninja*, from the resources below:
 51. Browser Support
 52. CSS Website Build Part 1
 53. CSS Website Build Part 2
+
+
+
+## Notes from JavaScript Tutorials
+1. Introduction
+2. What is JavaScript?
+3. `Hello World!` in JavaScript
+4. Where to Put Your JS
+5. Google Chrome Developer Tools
+6. Basic JavaScript Syntax and Rules
+7. JavaScript Variables
+8. Basic Mathematical Operators
+9. Math Operator Short-hand
+10. Logging to the Console
+11. Booleans in JavaScript
+12. `if` Statements
+13. `else if` Statements
+14. Comparison Operators
+15. Logical Operators
+16. `while` Loops
+17. `for` Loops
+18. `break` and `continue`
+19. Practical Example Using Loops
+20. Functions
+21. Variable Scope
+22. Numbers
+23. `NaN` (Not a Number)
+24. Strings
+25. Slice and Split Strings
+26. Arrays
+27. Introduction to Objects
+28. Creating a New JavaScript
+29. `this` Keyword
+30. Constructor Functions
+31. The Date Object
+32. What is the DOM in JavaScript?
+33. Traversing the DOM
+34. Changing Page Content
+35. Changing Element Attributes
+36. Changing CSS Styles
+37. Adding Elements to the DOM
+38. Removing Elements from the DOM
+39. Introduction to JavaScript Events
+40. The `onClick` Event
+41. Window `onLoad` Event
+42. JavaScript Timers
+43. Accessing form Elements
+44. VERY Simple Form Validation
+45. JavaScript Libraries
+46. What to Study Next
