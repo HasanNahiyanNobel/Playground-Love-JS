@@ -170,7 +170,8 @@ Currently following the tutorials of *The Net Ninja*, from the resources below:
 2. Syntax Basics and Types
 3. Control Flow
 4. Functions
-	- Details in `scripts/functions.js` file.
+	- Details in `scripts/tutorial-4-functions.js` file.
 5. Objects
-	- Details in `scripts/objects.js` file.
+	- Details in `scripts/tutorial-5-objects.js` file.
 6. The Document Object Model
+	- Details in `scripts/tutorial-6-dom.js` file.
