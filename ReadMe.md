@@ -6,11 +6,12 @@
 Currently following the tutorials of *The Net Ninja*, from the resources below:
 1. [HTML Playlist](https://www.youtube.com/playlist?list=PL4cUxeGkcC9ibZ2TSBaGGNrgh4ZgYE6Cc)
 2. [CSS Playlist](https://www.youtube.com/playlist?list=PL4cUxeGkcC9gQeDH6xYhmO-db2mhoTSrT)
-3. [JavaScript PlayList](https://www.youtube.com/playlist?list=PL4cUxeGkcC9i9Ae2D9Ee1RvylH38dKuET)
+3. [JavaScript Playlist 1](https://www.youtube.com/playlist?list=PL4cUxeGkcC9i9Ae2D9Ee1RvylH38dKuET)
+4. [JavaScript Playlist 2](https://www.youtube.com/playlist?list=PL4cUxeGkcC9haFPT7J25Q9GRB_ZkFrQAc)
 
 
 
-## Notes from HTML Tutorials
+## Notes from HTML Tutorial
 1. HTML Introduction
 2. What is HTML?
 	- He says, HTML is not a programming language, it's just a markup. That makes such an absolute and immediate sense, I feel dumb a bit.
@@ -47,7 +48,7 @@ Currently following the tutorials of *The Net Ninja*, from the resources below:
 
 
 
-## Notes from CSS Tutorials
+## Notes from CSS Tutorial
 1. Introduction to CSS
 2. What is CSS?
 3. Default Browser Styles
@@ -114,7 +115,7 @@ Currently following the tutorials of *The Net Ninja*, from the resources below:
 
 
 
-## Notes from JavaScript Tutorials
+## Notes from JavaScript Tutorial 1
 1. Introduction
 2. What is JavaScript?
 3. `Hello World!` in JavaScript
@@ -161,3 +162,14 @@ Currently following the tutorials of *The Net Ninja*, from the resources below:
 44. VERY Simple Form Validation
 45. JavaScript Libraries
 46. What to Study Next
+
+
+
+## Notes from JavaScript Tutorial 2
+1. Intro and Setup
+2. Syntax Basics and Types
+3. Control Flow
+4. Functions
+5. Objects
+	- If I initialize an object in JS like `objNew = objOld`, then the new object just points to the old one. This essentially means, changing the older one will also affect the newly created object.
+6. The Document Object Model
