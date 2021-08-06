@@ -170,6 +170,7 @@ Currently following the tutorials of *The Net Ninja*, from the resources below:
 2. Syntax Basics and Types
 3. Control Flow
 4. Functions
+	- Details in `scripts/functions.js` file.
 5. Objects
-	- If I initialize an object in JS like `objNew = objOld`, then the new object just points to the old one. This essentially means, changing the older one will also affect the newly created object.
+	- Details in `scripts/objects.js` file.
 6. The Document Object Model
