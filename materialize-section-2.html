@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--
+  Section 2 contains tutorial 11 to onwards.
+-->
+
+<head>
+	<meta charset="UTF-8">
+	<title>ম্যাটেরিয়ালাইজ</title>
+	<!-- Compiled and minified CSS -->
+	<link rel="stylesheet" href="css/main.css">
+
+	<!--Import Google Icon Font-->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+	<!-- 11+12. NavBars (Desktop and Mobile) + Badges -->
+	<!-- Note: Using jQuery library here. The Materialize JS library has to be put AFTER jQuery, so brought both of them to the bottom. -->
+	<nav class="nav-wrapper cyan">
+		<div class="container">
+			<a href="#" class="brand-logo">শিরোনাম</a>
+			<a href="#" class="sidenav-trigger" data-target="mobile-links">
+				<i class="material-icons">menu</i>
+			</a>
+			<ul class="right hide-on-med-and-down">
+				<li><a href="#">গৃহ</a></li>
+				<li><a href="#">আমাদের সম্পর্কে</a></li>
+				<li><a href="#">যোগাযোগ</a></li>
+				<li><a href="#" class="btn-floating cyan darken-3 z-depth-0">
+					<i class="material-icons">notifications</i>
+				</a></li>
+			</ul>
+		</div>
+	</nav>
+
+	<!-- Used some more JS for this purpose -->
+	<ul class="sidenav" id="mobile-links">
+		<li><a href="#">গৃহ</a></li>
+		<li><a href="#">আমাদের সম্পর্কে</a></li>
+		<li><a href="#">যোগাযোগ</a></li>
+		<li><a href="#">লগইন</a></li>
+	</ul>
+
+	<!-- 13. Cards -->
+	<div class="container">
+		<div class="row">
+			<div class="col s12 l6">
+				<div class="card">
+					<div class="card-image">
+						<img src="images/Shirshendu_1_Cropped.jpeg" alt="">
+						<a href="#" class="halfway-fab btn-floating cyan pulse">
+							<i class="material-icons">favorite</i>
+						</a>
+					</div>
+					<div class="card-content">
+						<span class="card-title">দানু</span>
+						<p>উপায় ছিল না বলে সেদিন শীতলা ক্লাবের দলে দানুকে নামানো হল। কিন্তু দানুর খেলা দেখে সবাই হেসেই অস্থির। লম্বা পায়ে তার লগবগ করে দৌড় আর দড়াম-দড়াম করে আছাড় খাওয়া দেখে একবার তাকে বসিয়ে দেওয়ার কথাও ভেবেছিল প্রাণারাম। মাঠের চারদিকে জড়ো হওয়া দর্শকদের মধ্যে হাসির লহর বইছে। তার মধ্যে অবশ্য গাঁয়ের সবচেয়ে বোকা লোক হরিবন্ধু নফরও ছিলেন। তিনিই শুধু বলেছিলেন, “এই ছেলেটির সঙ্গে মারাদোনার খুব মিল।”</p>
+					</div>
+					<div class="card-action">
+						<a href="#">আরেকটু</a>
+						<a href="#">দেখা যাক!</a>
+					</div>
+				</div>
+			</div>
+			<div class="col s12 l6">
+				<div class="card">
+					<div class="card-image">
+						<img src="images/Shirshendu_2_Cropped.jpg" alt="">
+						<a href="#" class="halfway-fab btn-floating cyan pulse">
+							<i class="material-icons">favorite</i>
+						</a>
+					</div>
+					<div class="card-content">
+						<span class="card-title">শীতলা ক্লাব</span>
+						<p>উপায় ছিল না বলে সেদিন শীতলা ক্লাবের দলে দানুকে নামানো হল। কিন্তু দানুর খেলা দেখে সবাই হেসেই অস্থির। লম্বা পায়ে তার লগবগ করে দৌড় আর দড়াম-দড়াম করে আছাড় খাওয়া দেখে একবার তাকে বসিয়ে দেওয়ার কথাও ভেবেছিল প্রাণারাম। মাঠের চারদিকে জড়ো হওয়া দর্শকদের মধ্যে হাসির লহর বইছে। তার মধ্যে অবশ্য গাঁয়ের সবচেয়ে বোকা লোক হরিবন্ধু নফরও ছিলেন। তিনিই শুধু বলেছিলেন, “এই ছেলেটির সঙ্গে মারাদোনার খুব মিল।”</p>
+					</div>
+					<div class="card-action">
+						<a href="#">আরেকটু</a>
+						<a href="#">দেখা যাক!</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- JavaScripts -->
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<!-- Compiled and minified JavaScript -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+	<script>
+	  $(document).ready(function () {
+		  $('.sidenav').sidenav();
+	  })
+	</script>
+</body>
