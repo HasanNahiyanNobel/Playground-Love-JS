@@ -117,12 +117,30 @@
 			<li class="collection-item avatar">
 				<i class="material-icons circle cyan darken-2">person</i>
 				<span class="title">শাহাদুজ্জামান</span>
-				<p class="grey-text">একটি হাসপাতাল, একজন নৃবিজ্ঞানী, কয়েকটি ভাঙা হাসড়</p>
+				<p class="grey-text">একটি হাসপাতাল, একজন নৃবিজ্ঞানী, কয়েকটি ভাঙা হাড়</p>
 				<a href="#" class="secondary-content">
 					<i class="material-icons cyan-text text-darken-2">email</i>
 				</a>
 			</li>
 		</ul>
+	</div>
+
+	<!-- 15. Modals-->
+	<div class="container">
+		<h2>মোডাল</h2>
+		<p>
+			<a href="#terms" class="btn orange modal-trigger">আমাদের টার্ম এবং কন্ডিশনেরা</a> <!--# is an ID selector-->
+		</p>
+		<!-- Used some more JS for this purpose -->
+		<div class="modal" id="terms">
+			<div class="modal-content">
+				<h4>আমাদের টার্ম এবং কন্ডিশনেরা</h4>
+				জানি নাই গো সাধন তোমার বলে কারে জানি না আমি ধুলায় বসে খেলেছিলেম তোমার দ্বারে জানি না অবোধ আমি ছিলেম বলে যেমন খুশি এলেম চলে ভয় করিনি তোমায় আমি অন্ধকারে জানি না তোমার জ্ঞানী আমায় বলে কঠিন তিরস্কারে পথ দিয়ে তুই আসিসনি যে ফিরে যা রে ফেরার পন্থা বন্ধ করে আপনি বাঁধো বাহুর ডোরে জানি ওরা আমায় মিথ্যে ডাকে বারে বারে।
+			</div>
+			<div class="modal-footer">
+				<a href="#" class="modal-close btn orange">জ্বী হুজুর, আমি একমত</a>
+			</div>
+		</div>
 	</div>
 
 	<!-- JavaScripts -->
@@ -132,6 +150,11 @@
 	<script>
 	  $(document).ready(function () {
 		  $('.sidenav').sidenav();
-	  })
+	  });
+	</script>
+	<script>
+		$(document).ready(function (){
+			$('.modal').modal();
+		});
 	</script>
 </body>
