@@ -175,16 +175,17 @@ Currently following the tutorials of *The Net Ninja*, from the resources below:
 5. Objects
 	- Details in `scripts/tutorial-5-objects.js` file.
 6. The Document Object Model
-
-
-
-
-- Details in `scripts/tutorial-6-dom.js` file.
+	- Details in `scripts/tutorial-6-dom.js` file.
 
 
 
 ## Notes from Materialize Tutorial
-*All the corresponding notes are in `index.html` file.*
+All the corresponding notes are in the following files:
+* `materialize-section-1.html`
+* `materialize-section-2.html`
+* `demo_materialize_project.html`
+
+### Lectures
 1. Introduction
 2. Setting Up
 3. Basic Text Styles
