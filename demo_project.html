@@ -35,6 +35,15 @@
 			padding-top: 4vw;
 			padding-bottom: 4vw;
 		}
+
+		/* For the colours of tabs. Found by the inspect option of chrome. */
+		.tabs .indicator {
+			background-color: dimgrey;
+		}
+
+		.tabs .tab a:focus, .tabs .tab a:focus.active {
+			background: transparent;
+		}
 	</style>
 </head>
 
@@ -65,6 +74,7 @@
 	<section class="container section" id="photos">
 		<div class="row">
 			<div class="col s12 l4">
+				<!-- Note: What I understand, Materialize assumes there should be 12 columns in general cases. So when I use s12—I want the content to take the entire container in small pages. And l4 means I want one-third of the entire container in large pages. -->
 				<img src="images/GHOSHNEMAI0277.jpg" alt="" class="responsive-img materialboxed"> <!--Note: This `responsive-img` tag helps the image to be inside our viewport. -->
 			</div>
 			<div class="col s12 l6 offset-l1">
@@ -98,19 +108,38 @@
 			<img src="images/GHOSHNEMAI0421.jpg" alt="" class="responsive-img">
 		</div>
 	</div>
-	<div> <!-- For dummy texts. -->
-		<div class="container">
-			<h1>Dummy Texts</h1>
-			<p>On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized</p>
-			<p>On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized</p>
-			<p>On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized</p>
-			<p>On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized</p>
-			<p>On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized</p>
-		</div>
-	</div>
 
 
 	<!-- Services/Tabs -->
+	<section class="container section" id="services">
+		<div class="row">
+			<div class="col s12 l4">
+				<h2 class="blue-grey-text text-darken-4">What I do...</h2>
+				<p>On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized.</p>
+				<p>The charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue.</p>
+			</div>
+			<div class="col s12 l6 offset-l2">
+				<ul class="tabs">
+					<li class="tab col s6">
+						<a href="#photography" class="blue-grey-text text-darken-4">Photography</a>
+					</li>
+					<li class="tab col s6">
+						<a href="#editing" class="blue-grey-text text-darken-4">Editing</a>
+					</li>
+				</ul>
+				<div class="col s12" id="photography">
+					<p class="flow-text blue-grey-text text-darken-4">PHOTOGRAPHY</p>
+					<p>On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized.</p>
+					<p>The charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue.</p>
+				</div>
+				<div class="col s12" id="editing">
+					<p class="flow-text blue-grey-text text-darken-4">EDITING</p>
+					<p>The charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue.</p>
+					<p>On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized.</p>
+				</div>
+			</div>
+		</div>
+	</section>
 
 	<!-- Parallax -->
 	<div class="parallax-container">
@@ -131,6 +160,7 @@
 		  $('.sidenav').sidenav(); // To open the side navigation bar.
 		  $('.materialboxed').materialbox(); // To zoom the images when clicked.
 		  $('.parallax').parallax(); // For the parallax images.
+		  $('.tabs').tabs(); // Self explanatory. :3
 	  });
 	</script>
 </body>
