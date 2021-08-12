@@ -9,6 +9,7 @@ Currently following the tutorials of *The Net Ninja*, from the resources below:
 3. [JavaScript Playlist 1](https://www.youtube.com/playlist?list=PL4cUxeGkcC9i9Ae2D9Ee1RvylH38dKuET)
 4. [JavaScript Playlist 2](https://www.youtube.com/playlist?list=PL4cUxeGkcC9haFPT7J25Q9GRB_ZkFrQAc)
 5. [Materialize Playlist](https://www.youtube.com/playlist?list=PL4cUxeGkcC9gGrbtvASEZSlFEYBnPkmff)
+6. [Bootstrap 5 Playlist](https://www.youtube.com/playlist?list=PL4cUxeGkcC9joIM91nLzd_qaH_AimmdAR)
 
 
 
@@ -175,11 +176,7 @@ Currently following the tutorials of *The Net Ninja*, from the resources below:
 5. Objects
 	- Details in `scripts/tutorial-5-objects.js` file.
 6. The Document Object Model
-
-
-
-
-- Details in `scripts/tutorial-6-dom.js` file.
+	- Details in `scripts/tutorial-6-dom.js` file.
 
 
 
@@ -210,3 +207,28 @@ Currently following the tutorials of *The Net Ninja*, from the resources below:
 23. Footers
 24. Tooltips (and Font Awesome)
 25. Scrollspy
+
+
+
+
+## Notes from Bootstrap 5 Tutorial
+1. Intro and Setup
+2. Bootstrap 5 New Features
+3. Colours and Typography
+4. Buttons and Button Groups
+5. Utility Classes
+6. Containers
+7. Grid Layout (Part 1)
+8. Grid Layout (Part 2)
+9. NavBars
+10. Cards
+11. Accordions
+12. List Groups
+13. Bootstrap Icons
+14. Working with Forms
+15. Tooltips
+16. Modals
+17. OffCanvas
+18. Dropdowns
+19. Customizing Bootstrap
+20. Tabs
