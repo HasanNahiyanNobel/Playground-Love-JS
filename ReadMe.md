@@ -8,6 +8,7 @@ Currently following the tutorials of *The Net Ninja*, from the resources below:
 2. [CSS Playlist](https://www.youtube.com/playlist?list=PL4cUxeGkcC9gQeDH6xYhmO-db2mhoTSrT)
 3. [JavaScript Playlist 1](https://www.youtube.com/playlist?list=PL4cUxeGkcC9i9Ae2D9Ee1RvylH38dKuET)
 4. [JavaScript Playlist 2](https://www.youtube.com/playlist?list=PL4cUxeGkcC9haFPT7J25Q9GRB_ZkFrQAc)
+5. [Materialize Playlist](https://www.youtube.com/playlist?list=PL4cUxeGkcC9gGrbtvASEZSlFEYBnPkmff)
 
 
 
@@ -174,4 +175,38 @@ Currently following the tutorials of *The Net Ninja*, from the resources below:
 5. Objects
 	- Details in `scripts/tutorial-5-objects.js` file.
 6. The Document Object Model
-	- Details in `scripts/tutorial-6-dom.js` file.
+
+
+
+
+- Details in `scripts/tutorial-6-dom.js` file.
+
+
+
+## Notes from Materialize Tutorial
+*All the corresponding notes are in `index.html` file.*
+1. Introduction
+2. Setting Up
+3. Basic Text Styles
+4. Hiding Content
+5. Colours
+6. Text Formatting
+7. Buttons
+8. Icons
+9. Responsive Grid
+10. Depth and Shadows
+11. NavBars (Desktop and Mobile)
+12. Badges
+13. Cards
+14. Collections
+15. Modals
+16. Setting up a Project
+17. Creating the Header
+18. Pushing and Pulling Content
+19. Parallaxes
+20. Tabs
+21. Forms (Part 1)
+22. Forms (Part 2)
+23. Footers
+24. Tooltips (and Font Awesome)
+25. Scrollspy

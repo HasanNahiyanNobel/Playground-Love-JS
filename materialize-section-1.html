@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--
+  Section 1 contains tutorial 3-10.
+-->
+
+<head>
+	<meta charset="UTF-8">
+	<title>ম্যাটেরিয়ালাইজ</title>
+	<!-- Compiled and minified CSS -->
+	<link rel="stylesheet" href="css/main.css">
+
+	<!--Import Google Icon Font-->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+	<div class="container">
+		<!-- 3. Basics -->
+		<h1>ম্যাটেরিয়ালাইজের মুখের দিকে দেখি</h1>
+		<h2>১-৩. এটা একটা সাবহেডিং</h2>
+		<p>আর এটা একটা প্যারাগ্রাফ!</p>
+		<p class="flow-text">এই প্যারাগ্রাফটা ফ্লো টেক্সট। এটা স্ক্রিনের সাইজের সাথে ছোট-বড় হবে।</p>
+
+		<!-- 4. Hiding/showing based on screen size -->
+		<h2>৪. লুকোচুরি খেলা</h2>
+		<h4 class="hide">Hide me on all screen sizes.</h4>
+		<h4 class="hide-on-small-only">Hide me on small screen sizes.</h4>
+		<h4 class="hide-on-med-only">Hide me on medium screen sizes.</h4>
+		<h4 class="hide-on-large-only">Hide me on large screen sizes.</h4>
+		<h4 class="hide-on-med-and-down">Hide me on small and medium screen sizes.</h4>
+		<h4 class="hide-on-med-and-up">Hide me on medium and large screen sizes.</h4>
+		<h4 class="show-on-small">Only show me on small screens.</h4>
+
+		<!--	5. Colours	-->
+		<h2>৫. রঙ</h2>
+		<p>ধাঁধার থেকেও জটিল তুমি</p>
+		<p class="cyan-text">খিদের থেকেও স্পষ্ট</p>
+		<p>কাজের মধ্যে অকাজ খালি</p>
+		<p>মনের মধ্যে কষ্ট</p>
+		<p class="cyan lighten-4">স্বপ্ন হয়ে যখন-তখন</p>
+		<p>আঁকড়ে আমায় ধরো</p>
+		<p>তাই তো বলি আমায় বরং</p>
+		<p>ঘেন্না করো, ঘেন্না করো</p>
+
+		<!--	6. Text Formatting	-->
+		<h2>৬. টেক্সট ফরম্যাট করা</h2>
+		<div class="center">
+			<p>ধাঁধার থেকেও জটিল তুমি</p>
+			<p>খিদের থেকেও স্পষ্ট</p>
+			<p>কাজের মধ্যে অকাজ খালি</p>
+			<p>মনের মধ্যে কষ্ট</p>
+		</div>
+
+		<!--	7. Buttons	-->
+		<h2>৭. বোতামসমগ্র</h2>
+		<a href="#" class="btn">নরমাল বোতাম</a>
+		<a href="#" class="btn-small">ছোট্ট বোতাম</a>
+		<a href="#" class="btn-large">বড় বোতাম</a>
+		<a href="#" class="btn pink">গোলাপী বোতাম</a>
+		<a href="#" class="btn disabled">নিষ্ক্রিয় বোতাম</a>
+		<p>ফ্লোটিং বোতাম</p>
+		<a href="#" class="btn-floating red"></a>
+		<p>ফ্লোটিং বোতাম (যেটা পাল্‌স করে)</p>
+		<a href="#" class="btn-floating amber pulse"></a>
+		<p>অন্যান্য এলিমেন্ট</p>
+		<div class="btn">আমি হই একটি ডিভ ট্যাগ</div>
+		<p>বোতামে ঢেউ</p>
+		<a href="#" class="btn waves-effect waves-light">নরমাল বোতাম</a>
+		<a href="#" class="btn deep-orange darken-2 waves-effect waves-light">কমলা বোতাম</a>
+
+		<!--	8. Icons	-->
+		<h2>৮. আইকনসমগ্র</h2>
+		<p>এমনি আইকন</p>
+		<i class="material-icons red-text">error</i>
+		<i class="material-icons yellow-text text-darken-2">warning</i>
+		<i class="material-icons grey-text">cloud</i>
+		<i class="material-icons blue-text">folder</i>
+		<p>বোতামে আইকন</p>
+		<a href="#" class="btn indigo">
+			<span>পাঠানো হোক</span>
+			<i class="material-icons right">send</i>
+		</a>
+		<a href="#" class="btn pink waves-effect waves-light">
+			<span>ইমেইল</span>
+			<i class="material-icons left">email</i>
+		</a>
+		<a href="#" class="btn-floating blue pulse">
+			<i class="material-icons">add</i>
+		</a>
+		<a href="#" class="btn-floating red pulse">
+			<i class="material-icons">remove</i>
+		</a>
+		<a href="#" class="btn-floating orange pulse">
+			<i class="material-icons">edit</i>
+		</a>
+
+		<!--	9. Responsive Grid	-->
+		<h2>৯. রেসপন্সিভ গ্রিড</h2>
+		<div class="row">
+			<div class="col red accent-1 s3">কিছু একটা</div>
+			<div class="col red accent-1 s3">কিছু একটা</div>
+			<div class="col red accent-1 s3">কিছু একটা</div>
+			<div class="col red accent-1 s3">কিছু একটা</div>
+		</div>
+		<!--	This one uses 4 columns in large screen, 6 columns in medium screen, and 12 columns in small screen. Does that make sense? Or does this make sense just in the opposite way?
+		Late Note: Yap, that makes sense IN the correct way. Smaller screen has smaller column width, so we want to fill up more columns there.  -->
+		<div class="row">
+			<div class="col red accent-1 s12 m6 l4">কিছু একটা</div>
+			<div class="col red accent-1 s12 m6 l4">কিছু একটা</div>
+			<div class="col red accent-1 s12 m6 l4">কিছু একটা</div>
+			<div class="col red accent-1 s12 m6 l4">কিছু একটা</div>
+			<div class="col red accent-1 s12 m6 l4">কিছু একটা</div>
+			<div class="col red accent-1 s12 m6 l4">কিছু একটা</div>
+		</div>
+
+		<!--	10. Depth and Shadows	-->
+		<h2>১০. ডেপ্‌থ এবং শ্যাডো</h2>
+		<!--&lt;!&ndash;<style>
+			.col > div {
+				background: lightblue;
+				height: 120px;
+			}&ndash;&gt;
+		</style>-->
+		<div class="row">
+			<div class="col s2">
+				<div></div>
+			</div>
+			<div class="col s2">
+				<div class="z-depth-1"></div>
+			</div>
+			<div class="col s2">
+				<div class="z-depth-2"></div>
+			</div>
+			<div class="col s2">
+				<div class="z-depth-3"></div>
+			</div>
+			<div class="col s2">
+				<div class="z-depth-4"></div>
+			</div>
+			<div class="col s2">
+				<div class="z-depth-5"></div>
+			</div>
+		</div>
+
+	</div>
+
+	<!-- JavaScripts -->
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<!-- Compiled and minified JavaScript -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+	<script>
+	  $(document).ready(function () {
+		  $('.sidenav').sidenav();
+	  })
+	</script>
+</body>

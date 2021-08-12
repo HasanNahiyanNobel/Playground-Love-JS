@@ -1,0 +1,263 @@
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+	<!--Import Google Icon Font-->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<!-- Compiled and minified CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+	<title>Photo Ninja</title>
+	<!-- Custom CSS codes from The Net Ninja. -->
+	<style>
+		/* CSS for the header. */
+		header {
+			background: url("images/Beatles_1.jpg") center center no-repeat;
+			background-size: cover;
+			-webkit-background-size: cover;
+			-moz-background-size: cover;
+			-o-background-size: cover;
+			min-height: 800px;
+		}
+
+		/* For smaller screens, the header will have half the usual height. */
+		@media screen and (max-width: 670px) {
+			header {
+				min-height: 400px;
+			}
+		}
+
+		/* For a bit more padding before and after the image section. */
+		.section {
+			padding-top: 4vw;
+			padding-bottom: 4vw;
+		}
+
+		/* For the colours of tabs. Found by the inspect option of chrome. */
+		.tabs .indicator {
+			background-color: dimgrey;
+		}
+
+		.tabs .tab a:focus, .tabs .tab a:focus.active {
+			background: transparent;
+		}
+	</style>
+</head>
+
+<body>
+	<!-- Navbar -->
+	<header>
+		<nav class="nav-wrapper transparent"> <!-- This is a transparent navbar—wow! -->
+			<div class="container">
+				<a href="#" class="brand-logo">Photo Ninja</a>
+				<a href="#" class="sidenav-trigger" data-target="mobile-menu">
+					<i class="material-icons">menu</i>
+				</a>
+				<ul class="right hide-on-med-and-down">
+					<li><a href="#photos">Photos</a></li>
+					<li><a href="#services">Services</a></li>
+					<li><a href="#contact">Contact</a></li>
+					<li><a href="#" class="tooltip btn-floating btn-small transparent z-depth-0" data-tooltip="Instagram"> <!-- Tooltip activated in JS. -->
+						<i class="fab fa-instagram"></i>
+					</a></li>
+					<li><a href="#" class="tooltip btn-floating btn-small transparent z-depth-0" data-tooltip="Facebook">
+						<i class="fab fa-facebook"></i>
+					</a></li>
+					<li><a href="#" class="tooltip btn-floating btn-small transparent z-depth-0" data-tooltip="Twitter">
+						<i class="fab fa-twitter"></i>
+					</a></li>
+				</ul>
+				<ul class="sidenav grey lighten-2" id="mobile-menu">
+					<li><a href="#photos">Photos</a></li>
+					<li><a href="#services">Services</a></li>
+					<li><a href="#contact">Contact</a></li>
+					<li><a href="#" class="tooltip btn-floating btn-small transparent z-depth-0" data-tooltip="Instagram"> <!-- Tooltip activated in JS. -->
+						<i class="fab fa-instagram"></i>
+					</a></li>
+					<li><a href="#" class="tooltip btn-floating btn-small transparent z-depth-0" data-tooltip="Facebook">
+						<i class="fab fa-facebook"></i>
+					</a></li>
+					<li><a href="#" class="tooltip btn-floating btn-small transparent z-depth-0" data-tooltip="Twitter">
+						<i class="fab fa-twitter"></i>
+					</a></li>
+				</ul>
+			</div>
+		</nav>
+	</header>
+
+	<!-- Photo/Grid -->
+	<section class="container section scroll-spy" id="photos">
+		<div class="row">
+			<div class="col s12 l4">
+				<!-- Note: What I understand, Materialize assumes there should be 12 columns in general cases. So when I use s12—I want the content to take the entire container in small pages. And l4 means I want one-third of the entire container in large pages. -->
+				<img src="images/GHOSHNEMAI0277.jpg" alt="" class="responsive-img materialboxed"> <!--Note: This `responsive-img` tag helps the image to be inside our viewport. -->
+			</div>
+			<div class="col s12 l6 offset-l1">
+				<h2 class="blue-grey-text text-darken-4">Portrait</h2>
+				<p>On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue.</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col s12 l4 push-l7 offset-l1">
+				<img src="images/GHOSHNEMAI0511.jpg" alt="" class="responsive-img materialboxed">
+			</div>
+			<div class="col s12 l6 pull-l5 right-align offset-l1">
+				<h2 class="blue-grey-text text-darken-4">Portrait</h2>
+				<p>On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue.</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col s12 l4">
+				<img src="images/GHOSHNEMAI0499.jpg" alt="" class="responsive-img materialboxed">
+			</div>
+			<div class="col s12 l6 offset-l1">
+				<h2 class="blue-grey-text text-darken-4">Portrait</h2>
+				<p>On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue.</p>
+			</div>
+		</div>
+	</section>
+
+	<!-- Parallax -->
+	<div class="parallax-container">
+		<div class="parallax">
+			<img src="images/GHOSHNEMAI0421.jpg" alt="" class="responsive-img">
+		</div>
+	</div>
+
+
+	<!-- Services/Tabs -->
+	<section class="container section scroll-spy" id="services">
+		<div class="row">
+			<div class="col s12 l4">
+				<h2 class="blue-grey-text text-darken-4">What I do...</h2>
+				<p>On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized.</p>
+				<p>The charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue.</p>
+			</div>
+			<div class="col s12 l6 offset-l2">
+				<ul class="tabs">
+					<li class="tab col s6">
+						<a href="#photography" class="blue-grey-text text-darken-4">Photography</a>
+					</li>
+					<li class="tab col s6">
+						<a href="#editing" class="blue-grey-text text-darken-4">Editing</a>
+					</li>
+				</ul>
+				<div class="col s12" id="photography">
+					<p class="flow-text blue-grey-text text-darken-4">PHOTOGRAPHY</p>
+					<p>On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized.</p>
+					<p>The charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue.</p>
+				</div>
+				<div class="col s12" id="editing">
+					<p class="flow-text blue-grey-text text-darken-4">EDITING</p>
+					<p>The charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue.</p>
+					<p>On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Parallax -->
+	<div class="parallax-container">
+		<div class="parallax">
+			<img src="images/GHOSHNEMAI0775.jpg" alt="" class="responsive-img">
+		</div>
+	</div>
+
+	<!-- Contact Form -->
+	<section class="container section scroll-spy" id="contact">
+		<div class="row">
+			<div class="col s12 l5">
+				<h2 class="blue-grey-text text-darken-4">Get In Touch</h2>
+				<p>On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized.</p>
+				<p>The charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue.</p>
+				<p>On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized.</p>
+				<p>The charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue.</p>
+			</div>
+			<div class="col s12 l5 offset-l2">
+				<form action="">
+					<!-- Note: When we are creating several input fields in materialize, it's a good idea to put each of them in their own divs, that those divs should have a class of input field. -->
+					<div class="input-field">
+						<i class="material-icons prefix">email</i>
+						<input type="email" id="email">
+						<label for="email">Your email</label> <!-- In Materialize, the label has to fo AFTER the input field. -->
+					</div>
+					<div class="input-field">
+						<i class="material-icons prefix">message</i>
+						<textarea id="message" class="materialize-textarea"></textarea>
+						<label for="message">Your message</label>
+					</div>
+					<div class="input-field">
+						<i class="material-icons prefix">date_range</i>
+						<input type="text" id="date" class="datepicker"> <!-- Activated in JS. -->
+						<label for="date">Choose a date you need me for...</label>
+					</div>
+					<div class="input-field">
+						<p>Services required...</p>
+						<p>
+							<label>
+								<input type="checkbox">
+								<span>Photography</span>
+							</label>
+						</p>
+						<p>
+							<label>
+								<input type="checkbox">
+								<span>Editing</span>
+							</label>
+						</p>
+					</div>
+					<div class="input-field center">
+						<button class="btn">Submit</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</section>
+
+	<!-- Footers -->
+	<footer class="page-footer grey darken-3">
+		<div class="container">
+			<div class="row">
+				<div class="col s12 l6">
+					<h5>About Me</h5>
+					<p>On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized.</p>
+					<p>The charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue.</p>
+				</div>
+				<div class="col s12 l4 offset-l2">
+					<h5>Connect</h5>
+					<ul>
+						<li><a href="#" class="grey-text text-lighten-3"></a>Facebook</li>
+						<li><a href="#" class="grey-text text-lighten-3"></a>Twitter</li>
+						<li><a href="#" class="grey-text text-lighten-3"></a>Linked In</li>
+						<li><a href="#" class="grey-text text-lighten-3"></a>Instagram</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="footer-copyright grey darken-4">
+			<div class="container center-align">&copy; 2021 Photo Ninja</div>
+		</div>
+	</footer>
+
+	<!-- Compiled and minified JavaScript -->
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+	<script>
+	  $(document).ready(function () {
+		  $('.sidenav').sidenav(); // To open the side navigation bar.
+		  $('.materialboxed').materialbox(); // To zoom the images when clicked.
+		  $('.parallax').parallax(); // For the parallax images.
+		  $('.tabs').tabs(); // Self explanatory. :3
+		  $('.datepicker').datepicker({
+			  disableWeekends: true // This makes the weekends unselectable.
+		  })
+		  $('.tooltip').tooltip();
+		  $('.scroll-spy').scrollSpy();
+	  });
+	</script>
+</body>
+
+</html>
