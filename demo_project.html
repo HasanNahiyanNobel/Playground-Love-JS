@@ -60,6 +60,15 @@
 					<li><a href="#">Photos</a></li>
 					<li><a href="#">Services</a></li>
 					<li><a href="#">Contact</a></li>
+					<li><a href="#" class="tooltip btn-floating btn-small transparent z-depth-0" data-tooltip="Instagram"> <!-- Tooltip activated in JS. -->
+						<i class="fab fa-instagram"></i>
+					</a></li>
+					<li><a href="#" class="tooltip btn-floating btn-small transparent z-depth-0" data-tooltip="Facebook">
+						<i class="fab fa-facebook"></i>
+					</a></li>
+					<li><a href="#" class="tooltip btn-floating btn-small transparent z-depth-0" data-tooltip="Twitter">
+						<i class="fab fa-twitter"></i>
+					</a></li>
 				</ul>
 				<ul class="sidenav grey lighten-2" id="mobile-menu">
 					<li><a href="#">Photos</a></li>
@@ -236,6 +245,7 @@
 		  $('.datepicker').datepicker({
 			  disableWeekends: true // This makes the weekends unselectable.
 		  })
+		  $('.tooltip').tooltip();
 	  });
 	</script>
 </body>
