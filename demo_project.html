@@ -65,10 +65,10 @@
 	<section class="container section" id="photos">
 		<div class="row">
 			<div class="col s12 l4">
-				<img src="images/GHOSHNEMAI0277.jpg" alt="" class="responsive-img materialboxed">
+				<img src="images/GHOSHNEMAI0277.jpg" alt="" class="responsive-img materialboxed"> <!--Note: This `responsive-img` tag helps the image to be inside our viewport. -->
 			</div>
 			<div class="col s12 l6 offset-l1">
-				<h2 class="indigo-text text-darken-4">Portrait</h2>
+				<h2 class="blue-grey-text text-darken-4">Portrait</h2>
 				<p>On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue.</p>
 			</div>
 		</div>
@@ -77,7 +77,7 @@
 				<img src="images/GHOSHNEMAI0511.jpg" alt="" class="responsive-img materialboxed">
 			</div>
 			<div class="col s12 l6 pull-l5 right-align offset-l1">
-				<h2 class="indigo-text text-darken-4">Portrait</h2>
+				<h2 class="blue-grey-text text-darken-4">Portrait</h2>
 				<p>On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue.</p>
 			</div>
 		</div>
@@ -86,17 +86,38 @@
 				<img src="images/GHOSHNEMAI0499.jpg" alt="" class="responsive-img materialboxed">
 			</div>
 			<div class="col s12 l6 offset-l1">
-				<h2 class="indigo-text text-darken-4">Portrait</h2>
+				<h2 class="blue-grey-text text-darken-4">Portrait</h2>
 				<p>On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue.</p>
 			</div>
 		</div>
 	</section>
 
 	<!-- Parallax -->
+	<div class="parallax-container">
+		<div class="parallax">
+			<img src="images/GHOSHNEMAI0421.jpg" alt="" class="responsive-img">
+		</div>
+	</div>
+	<div> <!-- For dummy texts. -->
+		<div class="container">
+			<h1>Dummy Texts</h1>
+			<p>On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized</p>
+			<p>On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized</p>
+			<p>On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized</p>
+			<p>On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized</p>
+			<p>On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized</p>
+		</div>
+	</div>
+
 
 	<!-- Services/Tabs -->
 
 	<!-- Parallax -->
+	<div class="parallax-container">
+		<div class="parallax">
+			<img src="images/GHOSHNEMAI0775.jpg" alt="" class="responsive-img">
+		</div>
+	</div>
 
 	<!-- Contact Form -->
 
@@ -109,6 +130,7 @@
 	  $(document).ready(function () {
 		  $('.sidenav').sidenav(); // To open the side navigation bar.
 		  $('.materialboxed').materialbox(); // To zoom the images when clicked.
+		  $('.parallax').parallax(); // For the parallax images.
 	  });
 	</script>
 </body>
