@@ -57,9 +57,9 @@
 					<i class="material-icons">menu</i>
 				</a>
 				<ul class="right hide-on-med-and-down">
-					<li><a href="#">Photos</a></li>
-					<li><a href="#">Services</a></li>
-					<li><a href="#">Contact</a></li>
+					<li><a href="#photos">Photos</a></li>
+					<li><a href="#services">Services</a></li>
+					<li><a href="#contact">Contact</a></li>
 					<li><a href="#" class="tooltip btn-floating btn-small transparent z-depth-0" data-tooltip="Instagram"> <!-- Tooltip activated in JS. -->
 						<i class="fab fa-instagram"></i>
 					</a></li>
@@ -71,16 +71,25 @@
 					</a></li>
 				</ul>
 				<ul class="sidenav grey lighten-2" id="mobile-menu">
-					<li><a href="#">Photos</a></li>
-					<li><a href="#">Services</a></li>
-					<li><a href="#">Contact</a></li>
+					<li><a href="#photos">Photos</a></li>
+					<li><a href="#services">Services</a></li>
+					<li><a href="#contact">Contact</a></li>
+					<li><a href="#" class="tooltip btn-floating btn-small transparent z-depth-0" data-tooltip="Instagram"> <!-- Tooltip activated in JS. -->
+						<i class="fab fa-instagram"></i>
+					</a></li>
+					<li><a href="#" class="tooltip btn-floating btn-small transparent z-depth-0" data-tooltip="Facebook">
+						<i class="fab fa-facebook"></i>
+					</a></li>
+					<li><a href="#" class="tooltip btn-floating btn-small transparent z-depth-0" data-tooltip="Twitter">
+						<i class="fab fa-twitter"></i>
+					</a></li>
 				</ul>
 			</div>
 		</nav>
 	</header>
 
 	<!-- Photo/Grid -->
-	<section class="container section" id="photos">
+	<section class="container section scroll-spy" id="photos">
 		<div class="row">
 			<div class="col s12 l4">
 				<!-- Note: What I understand, Materialize assumes there should be 12 columns in general cases. So when I use s12—I want the content to take the entire container in small pages. And l4 means I want one-third of the entire container in large pages. -->
@@ -120,7 +129,7 @@
 
 
 	<!-- Services/Tabs -->
-	<section class="container section" id="services">
+	<section class="container section scroll-spy" id="services">
 		<div class="row">
 			<div class="col s12 l4">
 				<h2 class="blue-grey-text text-darken-4">What I do...</h2>
@@ -158,7 +167,7 @@
 	</div>
 
 	<!-- Contact Form -->
-	<section class="section container" id="contact">
+	<section class="container section scroll-spy" id="contact">
 		<div class="row">
 			<div class="col s12 l5">
 				<h2 class="blue-grey-text text-darken-4">Get In Touch</h2>
@@ -246,6 +255,7 @@
 			  disableWeekends: true // This makes the weekends unselectable.
 		  })
 		  $('.tooltip').tooltip();
+		  $('.scroll-spy').scrollSpy();
 	  });
 	</script>
 </body>
