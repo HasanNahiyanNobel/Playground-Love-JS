@@ -29,6 +29,12 @@
 				min-height: 400px;
 			}
 		}
+
+		/* For a bit more padding before and after the image section. */
+		.section {
+			padding-top: 4vw;
+			padding-bottom: 4vw;
+		}
 	</style>
 </head>
 
@@ -56,6 +62,35 @@
 	</header>
 
 	<!-- Photo/Grid -->
+	<section class="container section" id="photos">
+		<div class="row">
+			<div class="col s12 l4">
+				<img src="images/GHOSHNEMAI0277.jpg" alt="" class="responsive-img materialboxed">
+			</div>
+			<div class="col s12 l6 offset-l1">
+				<h2 class="indigo-text text-darken-4">Portrait</h2>
+				<p>On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue.</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col s12 l4 push-l7 offset-l1">
+				<img src="images/GHOSHNEMAI0511.jpg" alt="" class="responsive-img materialboxed">
+			</div>
+			<div class="col s12 l6 pull-l5 right-align offset-l1">
+				<h2 class="indigo-text text-darken-4">Portrait</h2>
+				<p>On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue.</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col s12 l4">
+				<img src="images/GHOSHNEMAI0499.jpg" alt="" class="responsive-img materialboxed">
+			</div>
+			<div class="col s12 l6 offset-l1">
+				<h2 class="indigo-text text-darken-4">Portrait</h2>
+				<p>On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue.</p>
+			</div>
+		</div>
+	</section>
 
 	<!-- Parallax -->
 
@@ -71,11 +106,9 @@
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
 	<script>
-	  /**
-	   * Script to open the side navigation bar.
-	   */
 	  $(document).ready(function () {
-		  $('.sidenav').sidenav();
+		  $('.sidenav').sidenav(); // To open the side navigation bar.
+		  $('.materialboxed').materialbox(); // To zoom the images when clicked.
 	  });
 	</script>
 </body>
