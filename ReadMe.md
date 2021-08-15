@@ -3,12 +3,12 @@
 
 
 ## Resources
-Currently following the tutorials of *The Net Ninja*, from the resources below:
 1. [HTML Playlist](https://www.youtube.com/playlist?list=PL4cUxeGkcC9ibZ2TSBaGGNrgh4ZgYE6Cc)
 2. [CSS Playlist](https://www.youtube.com/playlist?list=PL4cUxeGkcC9gQeDH6xYhmO-db2mhoTSrT)
 3. [JavaScript Playlist 1](https://www.youtube.com/playlist?list=PL4cUxeGkcC9i9Ae2D9Ee1RvylH38dKuET)
 4. [JavaScript Playlist 2](https://www.youtube.com/playlist?list=PL4cUxeGkcC9haFPT7J25Q9GRB_ZkFrQAc)
 5. [Materialize Playlist](https://www.youtube.com/playlist?list=PL4cUxeGkcC9gGrbtvASEZSlFEYBnPkmff)
+6. [The Modern JavaScript Tutorial](https://javascript.info)
 
 
 
@@ -211,3 +211,41 @@ All the corresponding notes are in the following files:
 23. Footers
 24. Tooltips (and Font Awesome)
 25. Scrollspy
+
+
+
+
+## Notes from The Modern JavaScript Tutorial
+
+### Part 1 (The JavaScript Language)
+1. An Introduction
+2. JavaScript Fundamentals
+3. Code Quality
+4. Objects: The Basics
+5. Data Types
+6. Advanced Working with Functions
+7. Object Properties Configuration
+8. Prototypes, Inheritance
+9. Classes
+10. Error Handling
+11. Promises, Async/Await
+12. Generators, Advanced Iteration
+13. Modules
+14. Miscellaneous
+
+### Part 2 (Browser: Document, Events, Interfaces)
+1. Document
+2. Introduction to Events
+3. UI Events
+4. Forms, Controls
+5. Document and Resource Loading
+6. Miscellaneous
+
+### Part 3 (Additional Articles)
+1. Frames and Windows
+2. Binary Data, Files
+3. Network Requests
+4. Storing Data in the Browser
+5. Animation
+6. Web Components
+7. Regular Expressions
