@@ -12,7 +12,7 @@
 
 
 
-## Notes from HTML Tutorial
+## 1. HTML Tutorial
 1. HTML Introduction
 2. What is HTML?
 	- He says, HTML is not a programming language, it's just a markup. That makes such an absolute and immediate sense, I feel dumb a bit.
@@ -49,7 +49,7 @@
 
 
 
-## Notes from CSS Tutorial
+## 2. CSS Tutorial
 1. Introduction to CSS
 2. What is CSS?
 3. Default Browser Styles
@@ -116,7 +116,7 @@
 
 
 
-## Notes from JavaScript Tutorial 1
+## 3. JavaScript Tutorial 1
 1. Introduction
 2. What is JavaScript?
 3. `Hello World!` in JavaScript
@@ -166,7 +166,7 @@
 
 
 
-## Notes from JavaScript Tutorial 2
+## 4. JavaScript Tutorial 2
 1. Intro and Setup
 2. Syntax Basics and Types
 3. Control Flow
@@ -179,11 +179,11 @@
 
 
 
-## Notes from Materialize Tutorial
+## 5. Materialize Tutorial
 All the corresponding notes are in the following files:
 * `materialize-section-1.html`
 * `materialize-section-2.html`
-* `demo_materialize_project.html`
+* `demo-materialize-project.html`
 
 ### Lectures
 1. Introduction
@@ -215,7 +215,7 @@ All the corresponding notes are in the following files:
 
 
 
-## Notes from The Modern JavaScript Tutorial
+## 6. Modern JavaScript Tutorial
 
 ### Part 1 (The JavaScript Language)
 1. An Introduction
