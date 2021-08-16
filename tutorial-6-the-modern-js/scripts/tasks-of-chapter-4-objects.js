@@ -84,3 +84,96 @@ function multiplyNumeric(obj) {
 		}
 	}
 }
+
+/**
+ * Task: https://javascript.info/object-methods#create-a-calculator
+ */
+console.log('https://javascript.info/object-methods#create-a-calculator');
+
+let calculator = {
+	read() {
+		// Disabling prompts for the convenience of further tasks.
+		/*this.value1 = +prompt('Enter value 1', '0'); // Reading with a preceding plus sign ensures the value to be read as number.
+		this.value2 = +prompt('Enter value 2', '0');*/
+	},
+	sum() {
+		return this.value1 + this.value2;
+	},
+	mul() {
+		return this.value1 * this.value2;
+	},
+};
+
+calculator.read();
+console.log('Sum = ' + calculator.sum());
+console.log('Mul = ' + calculator.mul());
+
+/**
+ * Task: https://javascript.info/object-methods#chaining
+ */
+console.log('https://javascript.info/object-methods#chaining');
+
+let ladder = {
+	step: 0,
+	up() {
+		this.step++;
+		return this;
+	},
+	down() {
+		this.step--;
+		return this;
+	},
+	showStep: function() { // shows the current step
+		console.log(this.step);
+		return this;
+	},
+};
+
+ladder.up().up().down().showStep();
+
+/**
+ * Task: https://javascript.info/constructor-new#create-new-calculator
+ */
+console.log(
+		'https://javascript.info/constructor-new#create-new-calculator');
+
+function Calculator2() {
+	this.read = function() {
+		// Disabling prompts for the convenience of further tasks.
+		/*this.value1 = +prompt('Enter value 1', '0');
+		this.value2 = +prompt('Enter value 2', '0');*/
+	};
+	this.sum = function() {
+		return this.value1 + this.value2;
+	};
+	this.mul = function() {
+		return this.value1 * this.value2;
+	};
+}
+
+let calculator2 = new Calculator2();
+calculator2.read();
+
+console.log('Sum = ' + calculator2.sum());
+console.log('Mul = ' + calculator2.mul());
+
+/**
+ * Task: https://javascript.info/constructor-new#create-new-accumulator
+ */
+console.log('https://javascript.info/constructor-new#create-new-accumulator');
+
+let accumulator = new Accumulator(1); // initial value 1
+
+accumulator.read(); // adds the user-entered value
+accumulator.read(); // adds the user-entered value
+
+console.log(accumulator.value); // shows the sum of these values
+
+function Accumulator(stringValue) {
+	this.value = +stringValue;
+	this.read = function() {
+		// Disabling prompt for the convenience of further tasks.
+		/*let readValue = +prompt('Enter a value');
+		this.value += readValue;*/
+	};
+}
