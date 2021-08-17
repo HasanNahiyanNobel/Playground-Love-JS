@@ -160,7 +160,7 @@ console.log(`https://javascript.info/array#a-maximal-subarray`);
 
 // TODO: Solve this.
 
-/*function getMaxSubSum (arr) {
+/*function getMaximalSubarraySum (arr) {
 	let startOfMaxSub = 0;
 	let endOfMaxSub = 0;
 
@@ -186,38 +186,48 @@ console.log(`https://javascript.info/array#a-maximal-subarray`);
 	return sumOfMaxSub;
 }*/
 
-function getMaxSubSum (arr) {
-	const arrLength = arr.length;
+function getMaximalSubarraySum (array) {
+	const arrayLength = array.length;
 
-	let startOfMaxSub = 0;
+	let startOfSubarray = 0;
 
 	// Skip the first negative elements
-	while (arr[startOfMaxSub] < 0 && startOfMaxSub < arrLength) {
-		startOfMaxSub++;
+	while (array[startOfSubarray] < 0 && startOfSubarray < arrayLength) {
+		startOfSubarray++;
 	}
 
-	let endOfMaxSub = startOfMaxSub;
+	let endOfSubarray = startOfSubarray;
 
-	let sumOfSub = 0;
-	let sumOfMaxSub = 0;
+	let sumOfSubArray = 0;
+	let sumOfMaxSubArray = 0;
 
-	while (endOfMaxSub < arrLength) {
-		if (arr[endOfMaxSub] >= 0) {
-			// A non-negative number will not decrease and may increase the sum of subarray, so we should take it.
-			sumOfSub += arr[endOfMaxSub];
-			endOfMaxSub++;
+	while (endOfSubarray < arrayLength) {
+		if (array[endOfSubarray] >= 0) {
+			// A non-negative number will not decrease the sum of subarray, but will increase the size—so we should take it.
+			sumOfSubArray += array[endOfSubarray];
+			endOfSubarray++;
 		} else {
 			// Taking a negative number will only be worthy when sum of some of the following number(s) are greater than the negative number's absolute value.
-
+			let startOfSubSubArray = endOfSubarray;
+			let endOfSubSubArray = endOfSubarray + 1;
+			let sumOfSubSubArray = array[startOfSubSubArray]; // Adding the negative number, as we are trying to check whether taking it will be worthy.
+			while (endOfSubSubArray < arrayLength) {
+				sumOfSubSubArray += array[endOfSubSubArray]; // Add the next element after the negative element.
+				if (sumOfSubSubArray >= 0) {
+					//Taking the negative number will increase the length of subarray, and will not decrease the sum.
+					endOfSubarray = endOfSubSubArray;
+					break;
+				} else {
+					// Let's cross our fingers for the next element.
+				}
+			}
 		}
 	}
 }
 
-/*
-console.log(getMaxSubSum([-1, 2, 3, -9])); // == 5 (the sum of highlighted items)
-console.log(getMaxSubSum([2, -1, 2, 3, -9])); // == 6
-console.log(getMaxSubSum([-1, 2, 3, -9, 11])); // == 11
-console.log(getMaxSubSum([-2, -1, 1, 2])); // == 3
-console.log(getMaxSubSum([100, -9, 2, -3, 5])); // == 100
-console.log(getMaxSubSum([1, 2, 3])); // == 6 (take all)
-*/
+console.log(getMaximalSubarraySum([-1, 2, 3, -9])); // == 5 (the sum of highlighted items)
+console.log(getMaximalSubarraySum([2, -1, 2, 3, -9])); // == 6
+console.log(getMaximalSubarraySum([-1, 2, 3, -9, 11])); // == 11
+console.log(getMaximalSubarraySum([-2, -1, 1, 2])); // == 3
+console.log(getMaximalSubarraySum([100, -9, 2, -3, 5])); // == 100
+console.log(getMaximalSubarraySum([1, 2, 3])); // == 6 (take all)
