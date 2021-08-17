@@ -260,3 +260,150 @@ console.log(arr4); // HTML, JavaScript, CSS (no changes)
  * https://javascript.info/array-methods#create-an-extendable-calculator
  */
 console.log(`https://javascript.info/array-methods#create-an-extendable-calculator`);
+
+/*// This was my first solution
+function Calculator () {
+	this.operators = [];
+	this.methods = [];
+
+	this.calculate = function(str) {
+		let splitArray = str.split(` `);
+
+		let num1 = +splitArray[0];
+		let operator = splitArray[1];
+		let num2 = +splitArray[2];
+
+		if (operator === `+`) return num1 + num2;
+		else if (operator === `-`) return num1 - num2;
+		else if (this.operators.includes(operator)) {
+			let indexOfOperator = this.operators.indexOf(operator);
+			return this.methods[indexOfOperator](num1, num2);
+		}
+	};
+
+	this.addMethod = function(name, func) {
+		this.operators.push(name);
+		this.methods.push(func);
+	};
+}*/
+
+// Solution inspired from learning source
+function Calculator () {
+	this.methods = {
+		'-': (a, b) => a - b,
+		'+': (a, b) => a + b,
+	};
+
+	this.calculate = function(str) {
+		let splitArray = str.split(` `);
+
+		let num1 = +splitArray[0];
+		let operator = splitArray[1];
+		let num2 = +splitArray[2];
+
+		for (let key in this.methods) {
+			if (operator === key) {
+				return this.methods[key](num1, num2);
+			}
+		}
+		return null; // If the operator is not found, a null value will be returned
+	};
+
+	this.addMethod = function(name, func) {
+		this.methods[name] = func;
+	};
+}
+
+let calc = new Calculator;
+console.log(calc.calculate('3 + 7')); // 10
+console.log(calc.calculate('3 - 7')); // -4
+
+let powerCalc = new Calculator;
+powerCalc.addMethod('*', (a, b) => a * b);
+powerCalc.addMethod('/', (a, b) => a / b);
+powerCalc.addMethod('**', (a, b) => a ** b);
+powerCalc.addMethod('plus_twice', (a, b) => a + b + b);
+
+console.log(powerCalc.calculate('2 ** 3')); // 8
+console.log(powerCalc.calculate('56 / 8')); // 7
+console.log(powerCalc.calculate('3 * 12')); // 36
+console.log(powerCalc.calculate('4 plus_twice 7')); // 18
+
+/**
+ * Task: https://javascript.info/array-methods#map-to-names
+ */
+console.log(`https://javascript.info/array-methods#map-to-names`);
+
+let john = {name: 'John', age: 25};
+let pete = {name: 'Pete', age: 30};
+let mary = {name: 'Mary', age: 28};
+
+let users = [john, pete, mary];
+
+/*// My initial solution
+let names = [];
+
+users.forEach(user => {
+	names.push(user.name);
+});*/
+
+let names = users.map(user => user.name);
+
+console.log(names); // John, Pete, Mary
+
+/**
+ * Task: https://javascript.info/array-methods#map-to-objects
+ */
+console.log(`https://javascript.info/array-methods#map-to-objects`);
+
+let john2 = {name: 'John', surname: 'Smith', id: 1};
+let pete2 = {name: 'Pete', surname: 'Hunt', id: 2};
+let mary2 = {name: 'Mary', surname: 'Key', id: 3};
+
+let users2 = [john2, pete2, mary2];
+
+let usersMapped = users2.map(user => {
+	return {
+		fullName: `${user.name} ${user.surname}`,
+		id: user.id,
+	};
+});
+
+/*
+usersMapped = [
+	{ fullName: "John Smith", id: 1 },
+	{ fullName: "Pete Hunt", id: 2 },
+	{ fullName: "Mary Key", id: 3 }
+]
+*/
+
+console.log(usersMapped);
+console.log(usersMapped[0].id); // 1
+console.log(usersMapped[0].fullName); // John Smith
+
+/**
+ * Task: https://javascript.info/array-methods#sort-users-by-age
+ */
+console.log(`https://javascript.info/array-methods#sort-users-by-age`);
+
+function sortByAge (array) {
+	array.sort((a, b) => a.age - b.age);
+}
+
+let john3 = {name: 'John', age: 25};
+let pete3 = {name: 'Pete', age: 30};
+let mary3 = {name: 'Mary', age: 28};
+
+let arr5 = [pete3, john3, mary3];
+
+sortByAge(arr5);
+
+// now: [john, mary, pete]
+console.log(arr5[1].name); // Mary
+console.log(arr5[0].name); // John
+console.log(arr5[2].name); // Pete
+
+/**
+ * Task: https://javascript.info/array-methods#shuffle-an-array
+ */
+console.log(`https://javascript.info/array-methods#shuffle-an-array`);
