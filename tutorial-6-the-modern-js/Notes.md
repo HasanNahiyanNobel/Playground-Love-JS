@@ -29,3 +29,6 @@ Also, as that source notes, `for..in` has another specific problem too.
 
 ### Others
 So [this](https://javascript.info/array#a-word-about-length) says, the simplest way to clear the array is: `arr.length = 0`. This may become helpful in certain cases.
+
+## Map and Set
+* The alternative to Set could be an array of users, and the code to check for duplicates on every insertion using arr.find. But the performance would be much worse, because this method walks through the whole array checking every element. Set is much better optimized internally for uniqueness checks.
