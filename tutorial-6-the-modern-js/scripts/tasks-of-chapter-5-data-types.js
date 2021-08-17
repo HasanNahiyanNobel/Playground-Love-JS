@@ -158,66 +158,105 @@ console.log(sumInput());*/
  */
 console.log(`https://javascript.info/array#a-maximal-subarray`);
 
-// TODO: Solve this.
-
-/*function getMaxSubSum (arr) {
-	let startOfMaxSub = 0;
-	let endOfMaxSub = 0;
-
-	let sumOfSub = 0;
-	let sumOfMaxSub = 0;
-
-	const arrLength = arr.length;
-
-	while (endOfMaxSub < arrLength) {
-		if (sumOfSub + arr[endOfMaxSub] > sumOfSub) {
-			// Another element of this subarray can be added!
-			sumOfSub += arr[endOfMaxSub];
-		} else {
-			// This subarray can NOT be extended further. We may look for a new one.
-			startOfMaxSub = endOfMaxSub;
-			if (sumOfSub > sumOfMaxSub) {
-				sumOfMaxSub = sumOfSub;
-			}
-		}
-		endOfMaxSub++;
-	}
-
-	return sumOfMaxSub;
-}*/
-
 function getMaxSubSum (arr) {
-	const arrLength = arr.length;
-
-	let startOfMaxSub = 0;
-
-	// Skip the first negative elements
-	while (arr[startOfMaxSub] < 0 && startOfMaxSub < arrLength) {
-		startOfMaxSub++;
+	let currentSum = 0;
+	let maxSum = 0;
+	for (let number of arr) {
+		currentSum = Math.max(currentSum + number, 0);
+		maxSum = Math.max(maxSum, currentSum);
 	}
-
-	let endOfMaxSub = startOfMaxSub;
-
-	let sumOfSub = 0;
-	let sumOfMaxSub = 0;
-
-	while (endOfMaxSub < arrLength) {
-		if (arr[endOfMaxSub] >= 0) {
-			// A non-negative number will not decrease and may increase the sum of subarray, so we should take it.
-			sumOfSub += arr[endOfMaxSub];
-			endOfMaxSub++;
-		} else {
-			// Taking a negative number will only be worthy when sum of some of the following number(s) are greater than the negative number's absolute value.
-
-		}
-	}
+	return maxSum;
 }
 
-/*
 console.log(getMaxSubSum([-1, 2, 3, -9])); // == 5 (the sum of highlighted items)
 console.log(getMaxSubSum([2, -1, 2, 3, -9])); // == 6
 console.log(getMaxSubSum([-1, 2, 3, -9, 11])); // == 11
 console.log(getMaxSubSum([-2, -1, 1, 2])); // == 3
 console.log(getMaxSubSum([100, -9, 2, -3, 5])); // == 100
 console.log(getMaxSubSum([1, 2, 3])); // == 6 (take all)
-*/
+console.log(getMaxSubSum([])); // == 0 (for empty array)
+
+/**
+ * Task: https://javascript.info/array-methods#translate-border-left-width-to-borderleftwidth
+ */
+console.log(`https://javascript.info/array-methods#translate-border-left-width-to-borderleftwidth`);
+
+function camelize (string) {
+	let splitArray = string.split(`-`);
+	return splitArray.map((item, index) => {
+		item = index === 0 ? item : item[0].toUpperCase() + item.substring(1);
+		return item;
+	}).join(``);
+}
+
+console.log(camelize('background-color')); // == 'backgroundColor'
+console.log(camelize('list-style-image')); // == 'listStyleImage'
+console.log(camelize('-webkit-transition')); // == 'WebkitTransition'
+
+/**
+ * Task: https://javascript.info/array-methods#filter-range
+ */
+console.log(`https://javascript.info/array-methods#filter-range`);
+
+function filterRange (array, a, b) {
+	let filteredArray = [];
+	for (let element of array) {
+		if (element >= a && element <= b) {
+			filteredArray.push(element);
+		}
+	}
+	return filteredArray;
+}
+
+let arr = [5, 3, 8, 1];
+let filtered = filterRange(arr, 1, 4);
+console.log(filtered); // 3,1 (matching values)
+console.log(arr); // 5,3,8,1 (not modified)
+
+/**
+ * Task: https://javascript.info/array-methods#filter-range-in-place
+ */
+console.log(`https://javascript.info/array-methods#filter-range-in-place`);
+
+function filterRangeInPlace (array, a, b) {
+	array.forEach((item, index) => {
+		if (!(a <= item && item <= b)) {
+			array.splice(index, 1);
+		}
+	});
+}
+
+let arr2 = [5, 3, 8, 1];
+filterRangeInPlace(arr2, 1, 4); // removed the numbers except from 1 to 4
+console.log(arr2); // [3, 1]
+
+/**
+ * Task: https://javascript.info/array-methods#sort-in-decreasing-order
+ */
+console.log(`https://javascript.info/array-methods#sort-in-decreasing-order`);
+
+let arr3 = [5, 2, 1, -10, 8];
+
+arr3.sort((a, b) => b - a);
+
+console.log(arr3); // 8, 5, 2, 1, -10
+
+/**
+ * Task: https://javascript.info/array-methods#copy-and-sort-array
+ */
+console.log(`https://javascript.info/array-methods#copy-and-sort-array`);
+
+function copySorted (array) {
+	return array.slice().sort();
+}
+
+let arr4 = ['HTML', 'JavaScript', 'CSS'];
+let sorted4 = copySorted(arr4);
+
+console.log(sorted4); // CSS, HTML, JavaScript
+console.log(arr4); // HTML, JavaScript, CSS (no changes)
+
+/**
+ * https://javascript.info/array-methods#create-an-extendable-calculator
+ */
+console.log(`https://javascript.info/array-methods#create-an-extendable-calculator`);
