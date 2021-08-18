@@ -56,4 +56,14 @@ I love good algorithms.
 My mind is blowing out.
 
 ## Map and Set
-* The alternative to Set could be an array of users, and the code to check for duplicates on every insertion using arr.find. But the performance would be much worse, because this method walks through the whole array checking every element. Set is much better optimized internally for uniqueness checks.
+* As they quote:
+  > The alternative to `Set` could be an array of users, and the code to check for duplicates on every insertion using arr.find. But the performance would be much worse, because this method walks through the whole array checking every element. `Set` is much better optimized internally for uniqueness checks.
+
+
+## Date and Time
+### Not `getYear()`, but `getFullYear()`
+As they explains:
+> Many JavaScript engines implement a non-standard method `getYear()`. This method is deprecated. It returns 2-digit year sometimes. Please never use it. There is `getFullYear()` for the year.
+
+### Others
+* `Date.now()` gives the current time in milliseconds, *without* creating an intermediate `Date` object—thus giving a better performance.
