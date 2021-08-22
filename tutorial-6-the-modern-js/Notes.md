@@ -116,6 +116,5 @@ As they explain:
 
 
 ## Recursion
-Now I know, I knew nothing about recursion. A simple-looking recursion takes ages more than its loop counterpart.
-
-Why do I implement recursion in the first place anyway?
+1. Now I know, I knew nothing about recursion. A simple-looking recursion takes ages more than its loop counterpart. Why do we implement recursion in the first place anyway?
+2. An [interesting case](https://javascript.info/recursion#output-a-single-linked-list-in-the-reverse-order), where the loop version essentially does the same job as recursion.
