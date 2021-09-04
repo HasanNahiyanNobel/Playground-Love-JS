@@ -11,8 +11,8 @@
 
 ## Object References and Copying
 And I misunderstood [this](https://javascript.info/object-copy) for a long time! Objects are copied by reference, so they say:
-```
-let user = { name: 'John' };
+```javascript
+let user = {name: 'John'};
 
 let admin = user;
 
@@ -22,12 +22,12 @@ alert(user.name); // 'Pete', changes are seen from the "user" reference
 ```
 
 Sure, and I thought this would be work too:
-```
-let user = { name: 'John' };
+```javascript
+let user = {name: 'John'};
 
 let admin = user;
 
-admin = { name: 'Pete' }; // initialized a whole new object
+admin = {name: 'Pete'}; // initialized a whole new object
 
 alert(user.name); // I thought this would be 'Pete'!
 ```
@@ -118,3 +118,98 @@ As they explain:
 ## Recursion
 1. Now I know, I knew nothing about recursion. A simple-looking recursion takes ages more than its loop counterpart. Why do we implement recursion in the first place anyway?
 2. An [interesting case](https://javascript.info/recursion#output-a-single-linked-list-in-the-reverse-order), where the loop version essentially does the same job as recursion.
+
+
+
+
+## Rest Parameters and Spread Syntax
+1. The `...` in JavaScript means either rest parameters or spread syntax.
+2. Spread syntax is really useful while copying an object like `let objNew = { ...objOld };`
+
+
+
+
+## Variable Scope, Closure
+### Surprise Optimizations of V8, and Debugging
+Here's some beauty, again. I knew a bit about lexical environments due to our damned Compiler course. Now I came to know, how V8 engine optimizes these environments. That is, they analyze variable usage and if an outer variable is not used—it is removed.
+
+And that causes surprises in debug mode, so much so that the authors say, if we are debugging Chrome/Edge/Opera, sooner or later we will meet this. :3
+
+### Dead Zones
+Programming languages never fail to surprise. Like the following snippet:
+```javascript
+let x = 1;
+
+function func () {
+	console.log(x); // What will be printed?
+
+	let x = 2;
+}
+
+func();
+```
+
+No, it's not 1.
+
+And no, it's not 2 either. It's en error!
+
+Why? Here comes the concept of `<uninitialized>` variables. When an execution block starts, it 'knows' about all the variables, and they are marked as `<uninitialized>`. It looks like this:
+```javascript
+// 1. Start of lexical environment. Variable `str` is known and marked as `<uninitialized>`.
+
+let str; // 2. Now the variable is marked as `undefined`.
+
+str = `Lennon`; // 3. And now this has a value.
+```
+
+This is the reason why the first code snippet ends up with an error. In the newly created lexical environment, `x` is `<uninitialized>`, and printing that would not work.
+
+Details: https://javascript.info/closure#step-1-variables
+Corresponding Task: https://javascript.info/closure#is-variable-visible
+
+### Another Weird Behaviour of JavaScript
+[This](https://javascript.info/closure#sort-by-field) problem initially looked simple, with an immediate solution like this:
+```javascript
+let users = [
+	{name: 'John', age: 20, surname: 'Johnson'},
+	{name: 'Pete', age: 18, surname: 'Peterson'},
+	{name: 'Ann', age: 19, surname: 'Hathaway'},
+];
+
+function byField (fieldName) {
+	return (a, b) => a[fieldName] > b[fieldName] ? 1 : -1;
+}
+```
+
+This *is* the correct solution, but the problem was with checking. I tried it like this:
+```javascript
+users.sort(byField('name'));
+console.log(users);
+users.sort(byField('age'));
+console.log(users);
+```
+
+And surprisingly, both the console logs are printed being sorted by age.
+
+If I swap the sorts:
+```javascript
+users.sort(byField('age'));
+console.log(users);
+users.sort(byField('name'));
+console.log(users);
+```
+
+Then both the logs are printed being sorted by name. It seems like the last sort is *the* sort—which doesn't make sense.
+
+So I tried to add a debugger:
+```javascript
+users.sort(byField('name'));
+console.log(users);
+debugger;
+users.sort(byField('age'));
+console.log(users);
+```
+
+When the program halts at `debugger`, `users` is printed being sorted by name, and when resumed, the next print is sorted by age.
+
+**I could not figure out yet why and how this happens.**
