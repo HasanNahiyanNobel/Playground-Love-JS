@@ -165,6 +165,7 @@ str = `Lennon`; // 3. And now this has a value.
 This is the reason why the first code snippet ends up with an error. In the newly created lexical environment, `x` is `<uninitialized>`, and printing that would not work.
 
 Details: https://javascript.info/closure#step-1-variables
+
 Corresponding Task: https://javascript.info/closure#is-variable-visible
 
 ### Another Weird Behaviour of JavaScript
@@ -213,3 +214,41 @@ console.log(users);
 When the program halts at `debugger`, `users` is printed being sorted by name, and when resumed, the next print is sorted by age.
 
 **I could not figure out yet why and how this happens.**
+
+
+
+
+## The Old `var`
+Source: https://javascript.info/var
+1. `var` has no block-scope—that's pretty interesting. A simple `i` in for loop is visible outside the loop.<br>This. Is. Ugly.
+2. A `var` with same name can be declared twice. That's also ugly.
+3. All the `var` declarations are hoisted to the top. Not so much ugly—but who on Earth codes like this?
+
+
+
+
+## Function object, NFE
+### On Overriding `toString` of a function
+[This](https://javascript.info/function-object#sum-with-an-arbitrary-amount-of-brackets) task made me think a lot. Came up with a non-pretty solution, then adapted the authors' one.
+
+But now there seems to be a problem with overriding the `toString` method of a function. Say, we do it like this:
+```javascript
+function testFunc () {
+	return 0;
+}
+
+testFunc.toString = function() {
+	return `A string!`;
+};
+```
+
+Then the `alert` and `console.log` functions behaves very differently:
+```javascript
+alert(testFunc); // Prints `A string!`
+console.log(testFunc); // Prints the whole function. 😒
+console.log(`${testFunc}`); // Prints `A string!`
+```
+
+I can indeed wrap the function inside a `` `${}` ``, but that's not the neat way.
+
+Still couldn't figure out how to deal with this.
