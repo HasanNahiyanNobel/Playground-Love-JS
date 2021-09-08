@@ -252,3 +252,14 @@ console.log(`${testFunc}`); // Prints `A string!`
 I can indeed wrap the function inside a `` `${}` ``, but that's not the neat way.
 
 Still couldn't figure out how to deal with this.
+
+
+
+
+## Scheduling Functions
+Both `setTimeout` and `setInterval` references to the outer lexical environment—that's expected.
+
+But as they are scheduled, their outer variables do not get garbage collected, until,
+
+1. `setTimeout` is called by the scheduler.<br>Expected. Why would the outer variables be garbage collected if that `setTimeout` is not executed!
+2. An `clearInterval` is called for `setInterval`.<br>Also expected. If `clearInterval` is not called, `setInterval` will run indefinitely, and the outer lexical environment should also remain for an indefinite time.
