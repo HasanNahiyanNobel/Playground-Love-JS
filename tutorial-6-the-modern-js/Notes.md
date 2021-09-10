@@ -263,3 +263,96 @@ But as they are scheduled, their outer variables do not get garbage collected, u
 
 1. `setTimeout` is called by the scheduler.<br>Expected. Why would the outer variables be garbage collected if that `setTimeout` is not executed!
 2. An `clearInterval` is called for `setInterval`.<br>Also expected. If `clearInterval` is not called, `setInterval` will run indefinitely, and the outer lexical environment should also remain for an indefinite time.
+
+
+
+
+## Decorators and Forwarding, Call/Apply
+Had some tough time while trying to understand this chapter. **Need to review later.**
+
+### How Decorators Can Add Properties to a Function
+Say, we have a decorator like this:
+```javascript
+function decorator (func) {
+	let wrapper = function(...args) {
+		func.apply(this, args);
+	};
+
+	wrapper.aProperty = `This is a property of the passed function: ${func.name}.`;
+	/* Magic happens in the previous line. */
+	/* As we are returning `wrapper`, `aProperty` becomes a property of `func`, later accessible by `func.aProperty`.*/
+
+	return wrapper;
+}
+```
+
+### Arguments of a Function
+Seems that when a function is called, it has an `arguments` property. I tried to get an insight how this property works.
+
+#### Test 1
+```javascript
+function testFunc () {
+	console.log(arguments); // Prints: Arguments(4) [9, 3, 7, 0, callee: ƒ, Symbol(Symbol.iterator): ƒ]
+	console.log(typeof arguments); // Prints: object
+	for (let arg of arguments) {
+		console.log(arg); // Prints: 9, 3, 7, 0 (each onn a new line)
+	}
+}
+
+testFunc(9, 3, 7, 0);
+```
+
+Details of the first line looks like this:
+``` 
+Arguments(4) [9, 3, 7, 0, callee: ƒ, Symbol(Symbol.iterator): ƒ]
+  0: 9
+  1: 3
+  2: 7
+  3: 0
+  callee: ƒ testFunc()
+  length: 4
+  Symbol(Symbol.iterator): ƒ values()
+  [[Prototype]]: Object
+```
+
+So now I know that `arguments` is an object, which is also iterable.
+
+#### Test 2
+Just tried to see, what `arguments` look like *after* the function's execution:
+```javascript
+console.log(testFunc.arguments); // And this prints `null`!
+```
+
+This means, `arguments` behave like `this`. It only has value when a function is called—which is great.
+
+#### Test 3
+What if the function was *declared* to have an argument?
+
+```javascript
+function testFunc (arg1) {
+	console.log(arg1); // Prints only 9
+	for (let arg of arguments) {
+		console.log(arg); // Prints: 9, 3, 7, 0 (each on a new line)
+	}
+}
+
+testFunc(9, 3, 7, 0);
+```
+
+This means, no matter how the function is declared, `arguments` really have all the arguments passed.
+
+#### Test 4
+And what if the function has rest parameters?
+
+```javascript
+function testFunc (arg1, ...args) {
+	console.log(arg1); // Prints only 9
+	for (let arg of args) {
+		console.log(arg); // Prints only 3, 7, 0 (each on a new line)
+	}
+}
+
+testFunc(9, 3, 7, 0);
+```
+
+This also perfectly makes sense.
