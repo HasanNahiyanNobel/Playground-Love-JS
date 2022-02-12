@@ -4,10 +4,10 @@
 
 console.log(`https://javascript.info/closure#sum-with-closures`);
 
-function magicalSum (a) {
-	return function(b) {
-		return a + b;
-	};
+function magicalSum(a) {
+  return function(b) {
+    return a + b;
+  };
 }
 
 console.log(magicalSum(1)(2));
@@ -20,18 +20,18 @@ console.log(magicalSum(5)(-1));
 
 console.log(`https://javascript.info/closure#filter-through-function`);
 
-function inBetween (a, b) {
-	// Function definition version
-	/*return function(item) {
-		return item >= a && item <= b;
-	};*/
+function inBetween(a, b) {
+  // Function definition version
+  /*return function(item) {
+    return item >= a && item <= b;
+  };*/
 
-	// Arrow function version
-	return item => item >= a && item <= b;
+  // Arrow function version
+  return item => item >= a && item <= b;
 }
 
-function inArray (arr) {
-	return item => arr.includes(item);
+function inArray(arr) {
+  return item => arr.includes(item);
 }
 
 let arr = [1, 2, 3, 4, 5, 6, 7];
@@ -41,19 +41,19 @@ console.log(arr.filter(inArray([1, 2, 10]))); // 1,2
 
 /**
  * Task: https://javascript.info/closure#sort-by-field
- * Note: Faced a problem while validating my solution. Details in Notes.md.
+ * Note: Faced a problem while validating my solution. Details in ReadMe.md.
  */
 
 console.log(`https://javascript.info/closure#sort-by-field`);
 
 let users = [
-	{name: 'John', age: 20, surname: 'Johnson'},
-	{name: 'Pete', age: 18, surname: 'Peterson'},
-	{name: 'Ann', age: 19, surname: 'Hathaway'},
+  {name: 'John', age: 20, surname: 'Johnson'},
+  {name: 'Pete', age: 18, surname: 'Peterson'},
+  {name: 'Ann', age: 19, surname: 'Hathaway'},
 ];
 
-function byField (fieldName) {
-	return (a, b) => a[fieldName] > b[fieldName] ? 1 : -1;
+function byField(fieldName) {
+  return (a, b) => a[fieldName] > b[fieldName] ? 1 : -1;
 }
 
 users.sort(byField('name'));
@@ -70,21 +70,21 @@ console.log(users);
 
 console.log(`https://javascript.info/closure#army-of-functions`);
 
-function makeArmy () {
-	let shooters = [];
+function makeArmy() {
+  let shooters = [];
 
-	let i = 0;
-	while (i < 10) {
-		let j = i;
-		let shooter = function() { // create a shooter function,
-			console.log(j); // that should show its number
-		};
-		shooters.push(shooter); // and add it to the array
-		i++;
-	}
+  let i = 0;
+  while (i < 10) {
+    let j = i;
+    let shooter = function() { // create a shooter function,
+      console.log(j); // that should show its number
+    };
+    shooters.push(shooter); // and add it to the array
+    i++;
+  }
 
-	// ...and return the array of shooters
-	return shooters;
+  // ...and return the array of shooters
+  return shooters;
 }
 
 let army = makeArmy();
