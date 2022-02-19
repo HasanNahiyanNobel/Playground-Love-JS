@@ -58,10 +58,66 @@ function getCalculationTime(whatToCalculate, numberOfIterations) {
 
 let timesInCSV = ``;
 
-for (let i = 0; i < 0; i++) {
+for (let i = 0; i < 1; i++) {
   let headTime = getCalculationTime(head.glasses, 10e7);
   let pocketTime = getCalculationTime(pockets.glasses, 10e7);
   timesInCSV += `${headTime}, ${pocketTime}\n`;
 }
 
 console.log(timesInCSV);
+
+/**
+ * Task: https://javascript.info/prototype-inheritance#where-does-it-write
+ */
+
+console.log(
+    `https://javascript.info/prototype-inheritance#where-does-it-write`);
+
+let animal2 = {
+  eat() {
+    this.full = true;
+  },
+};
+
+let rabbit2 = {
+  __proto__: animal2,
+};
+
+rabbit2.eat();
+console.log(animal2.full);
+console.log(rabbit2.full);
+
+/**
+ * Task: https://javascript.info/prototype-inheritance#why-are-both-hamsters-full
+ */
+
+console.log(
+    `https://javascript.info/prototype-inheritance#why-are-both-hamsters-full`);
+
+let hamster = {
+  stomach: [],
+  eat(food) {
+    // this.stomach.push(food);
+    if (this.stomach === []) {
+      this.stomach = [food];
+    } else {
+      this.stomach = this.stomach.concat([food]);
+    }
+  },
+};
+
+let speedy = {
+  __proto__: hamster,
+};
+
+let lazy = {
+  __proto__: hamster,
+};
+
+// This one found the food
+speedy.eat(`apple`);
+speedy.eat(`banana`);
+console.log(speedy.stomach); // apple
+
+// This one also has it, why? fix please.
+console.log(lazy.stomach); // apple
