@@ -44,7 +44,7 @@ But as I see, this is not how references work! When a whole new object is initia
 * Knew, but still, `trunc` and `floor` is not the same—to be exact—in case of negative numbers.
 
 ### How detect whether the input is a number?
-[This](https://javascript.info/number#repeat-until-the-input-is-a-number) and [this](https://javascript.info/array#sum-input-numbers) made me think, a lot. Was way more harder than one would assume.
+[This](https://javascript.info/number#repeat-until-the-input-is-a-number) and [this](https://javascript.info/array#sum-input-numbers) made me think, a lot. Was way harder than one would assume.
 
 Spent a whole evening behind this, did some research, finally [answered in Stack Overflow](https://stackoverflow.com/a/68821383/6606776).
 
@@ -71,7 +71,7 @@ So [this](https://javascript.info/array#a-word-about-length) says, the simplest 
 
 ## Array Methods
 ### Types of Methods
-Summary of this section will be useful perhaps. There is a "cheat sheet" which separated the methods into following types:
+Summary of this section will be useful, perhaps. There is a "cheat sheet" which separated the methods into following types:
 1. To add or remove elements
 2. To search among elements
 3. To iterate over elements
@@ -80,7 +80,7 @@ Summary of this section will be useful perhaps. There is a "cheat sheet" which s
 
 Now I think, I can distinguish between them. `filter` is really used to filter out some elements in an array, and `map` really maps every element.
 
-Of course I can use `for` loop in any of these cases. But as I learn from this book—the functions are *fine-tuned* to do their specific jobs, and thus much faster.
+Of course, I can use `for` loop in any of these cases. But as I learn from this book—the functions are *fine-tuned* to do their specific jobs, and thus much faster.
 
 ### To shuffle an array
 [This](https://javascript.info/array-methods#shuffle-an-array) problem, at first, looked very trivial. Solved it using `array.sort()`, and got very pleased—how amazingly the sort function can be used to shuffle!
@@ -140,10 +140,10 @@ Programming languages never fail to surprise. Like the following snippet:
 ```javascript
 let x = 1;
 
-function func () {
-	console.log(x); // What will be printed?
+function func() {
+  console.log(x); // What will be printed?
 
-	let x = 2;
+  let x = 2;
 }
 
 func();
@@ -172,13 +172,13 @@ Corresponding Task: https://javascript.info/closure#is-variable-visible
 [This](https://javascript.info/closure#sort-by-field) problem initially looked simple, with an immediate solution like this:
 ```javascript
 let users = [
-	{name: 'John', age: 20, surname: 'Johnson'},
-	{name: 'Pete', age: 18, surname: 'Peterson'},
-	{name: 'Ann', age: 19, surname: 'Hathaway'},
+  {name: 'John', age: 20, surname: 'Johnson'},
+  {name: 'Pete', age: 18, surname: 'Peterson'},
+  {name: 'Ann', age: 19, surname: 'Hathaway'},
 ];
 
-function byField (fieldName) {
-	return (a, b) => a[fieldName] > b[fieldName] ? 1 : -1;
+function byField(fieldName) {
+  return (a, b) => a[fieldName] > b[fieldName] ? 1 : -1;
 }
 ```
 
@@ -233,12 +233,12 @@ Source: https://javascript.info/var
 
 But now there seems to be a problem with overriding the `toString` method of a function. Say, we do it like this:
 ```javascript
-function testFunc () {
-	return 0;
+function testFunc() {
+  return 0;
 }
 
 testFunc.toString = function() {
-	return `A string!`;
+  return `A string!`;
 };
 ```
 
@@ -273,16 +273,16 @@ Had some tough time while trying to understand this chapter. **Need to review la
 ### How Decorators Can Add Properties to a Function
 Say, we have a decorator like this:
 ```javascript
-function decorator (func) {
-	let wrapper = function(...args) {
-		func.apply(this, args);
-	};
+function decorator(func) {
+  let wrapper = function(...args) {
+    func.apply(this, args);
+  };
 
-	wrapper.aProperty = `This is a property of the passed function: ${func.name}.`;
-	/* Magic happens in the previous line. */
-	/* As we are returning `wrapper`, `aProperty` becomes a property of `func`, later accessible by `func.aProperty`.*/
+  wrapper.aProperty = `This is a property of the passed function: ${func.name}.`;
+  /* Magic happens in the previous line. */
+  /* As we are returning `wrapper`, `aProperty` becomes a property of `func`, later accessible by `func.aProperty`.*/
 
-	return wrapper;
+  return wrapper;
 }
 ```
 
@@ -291,12 +291,12 @@ Seems that when a function is called, it has an `arguments` property. I tried to
 
 #### Test 1
 ```javascript
-function testFunc () {
-	console.log(arguments); // Prints: Arguments(4) [9, 3, 7, 0, callee: ƒ, Symbol(Symbol.iterator): ƒ]
-	console.log(typeof arguments); // Prints: object
-	for (let arg of arguments) {
-		console.log(arg); // Prints: 9, 3, 7, 0 (each onn a new line)
-	}
+function testFunc() {
+  console.log(arguments); // Prints: Arguments(4) [9, 3, 7, 0, callee: ƒ, Symbol(Symbol.iterator): ƒ]
+  console.log(typeof arguments); // Prints: object
+  for (let arg of arguments) {
+    console.log(arg); // Prints: 9, 3, 7, 0 (each onn a new line)
+  }
 }
 
 testFunc(9, 3, 7, 0);
@@ -329,11 +329,11 @@ This means, `arguments` behave like `this`. It only has value when a function is
 What if the function was *declared* to have an argument?
 
 ```javascript
-function testFunc (arg1) {
-	console.log(arg1); // Prints only 9
-	for (let arg of arguments) {
-		console.log(arg); // Prints: 9, 3, 7, 0 (each on a new line)
-	}
+function testFunc(arg1) {
+  console.log(arg1); // Prints only 9
+  for (let arg of arguments) {
+    console.log(arg); // Prints: 9, 3, 7, 0 (each on a new line)
+  }
 }
 
 testFunc(9, 3, 7, 0);
@@ -345,14 +345,75 @@ This means, no matter how the function is declared, `arguments` really have all 
 And what if the function has rest parameters?
 
 ```javascript
-function testFunc (arg1, ...args) {
-	console.log(arg1); // Prints only 9
-	for (let arg of args) {
-		console.log(arg); // Prints only 3, 7, 0 (each on a new line)
-	}
+function testFunc(arg1, ...args) {
+  console.log(arg1); // Prints only 9
+  for (let arg of args) {
+    console.log(arg); // Prints only 3, 7, 0 (each on a new line)
+  }
 }
 
 testFunc(9, 3, 7, 0);
 ```
 
 This also perfectly makes sense.
+
+
+
+
+## Function Binding
+Lesson: https://javascript.info/bind
+
+Felt this too hard, probably because I couldn't grasp the previous chapter properly. <span style="color: orange">I wish to revisit this later.</span> ⚠️
+
+
+
+
+## Prototypal Inheritance
+Problem: https://javascript.info/prototype-inheritance#searching-algorithm
+
+Funny. This problem asks to assign prototype that follows a path `pockets → bed → table → head`. We have a property `glasses` in head, and nowhere else.
+
+The question is, which will be accessible faster—`heads.glasses` or `pockets.glasses`?
+
+The immediate answer feels like, of course, `heads.glasses`. But the witty problem creator also asked to do some benchmarking. So I did it like this—
+
+```javascript
+function getCalculationTime(whatToCalculate, numberOfIterations) {
+  let startTime = new Date();
+  for (let i = 0; i < numberOfIterations; i++) {
+    let temp = whatToCalculate;
+  }
+  let endTime = new Date();
+  return endTime - startTime;
+}
+
+let timesInCSV = ``;
+
+for (let i = 0; i < 1000; i++) {
+  let headTime = getCalculationTime(head.glasses, 10e7);
+  let pocketTime = getCalculationTime(pockets.glasses, 10e7);
+  timesInCSV += `${headTime}, ${pocketTime}\n`;
+}
+
+console.log(timesInCSV);
+```
+
+This produces some surprising results—
+
+| Category | Time for `head.glasses` (ms) | Time for `pockets.glasses` (ms) |
+|----------|------------------------------|---------------------------------|
+| Mean     | 91.412                       | 90.259                          |
+| Median   | 86                           | 84                              |
+| SD       | 27.14                        | 27.08                           |
+
+My interpretation of this, **before reading** the answer, is like this—
+1. When we implement a prototype, an object actually *gets* the inherited properties. So when looked for `anObject.inheritedProperty`, it does not need to look way up the chain.
+2. My benchmarking process was specially bad. I think it started when no other CPU-heavy process was running in my PC. Then I started some Edge tabs for a bit of browsing—which occupied CPU, and that resulted in ugly-high standard deviations.
+
+**Actual Answer:** This is also close to what I thought. Modern JS engines are well optimized, and objects can 'remember' from where it got an inherited property. So when requested for the second time, it has become optimized.
+
+
+
+
+## F.prototype, Native Prototypes, Prototype methods, objects without __proto__
+Had a hard time understanding these concepts. <span style="color: orange">I wish to revisit these three chapters later.</span> ⚠
