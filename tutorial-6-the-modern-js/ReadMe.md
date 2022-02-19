@@ -411,3 +411,9 @@ My interpretation of this, **before reading** the answer, is like this—
 2. My benchmarking process was specially bad. I think it started when no other CPU-heavy process was running in my PC. Then I started some Edge tabs for a bit of browsing—which occupied CPU, and that resulted in ugly-high standard deviations.
 
 **Actual Answer:** This is also close to what I thought. Modern JS engines are well optimized, and objects can 'remember' from where it got an inherited property. So when requested for the second time, it has become optimized.
+
+
+
+
+## F.prototype
+Had a hard time understanding this concept. <span style="color: orange">I wish to revisit this later.</span> ⚠
