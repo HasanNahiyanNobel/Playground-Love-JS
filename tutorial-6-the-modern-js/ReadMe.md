@@ -364,3 +364,50 @@ This also perfectly makes sense.
 Lesson: https://javascript.info/bind
 
 Felt this too hard, probably because I couldn't grasp the previous chapter properly. <span style="color: orange">I wish to revisit this later.</span> ⚠️
+
+
+
+
+## Prototypal Inheritance
+Problem: https://javascript.info/prototype-inheritance#searching-algorithm
+
+Funny. This problem asks to assign prototype that follows a path `pockets → bed → table → head`. We have a property `glasses` in head, and nowhere else.
+
+The question is, which will be accessible faster—`heads.glasses` or `pockets.glasses`?
+
+The immediate answer feels like, of course, `heads.glasses`. But the witty problem creator also asked to do some benchmarking. So I did it like this—
+
+```javascript
+function getCalculationTime(whatToCalculate, numberOfIterations) {
+  let startTime = new Date();
+  for (let i = 0; i < numberOfIterations; i++) {
+    let temp = whatToCalculate;
+  }
+  let endTime = new Date();
+  return endTime - startTime;
+}
+
+let timesInCSV = ``;
+
+for (let i = 0; i < 1000; i++) {
+  let headTime = getCalculationTime(head.glasses, 10e7);
+  let pocketTime = getCalculationTime(pockets.glasses, 10e7);
+  timesInCSV += `${headTime}, ${pocketTime}\n`;
+}
+
+console.log(timesInCSV);
+```
+
+This produces some surprising results—
+
+| Category | Time for `head.glasses` (ms) | Time for `pockets.glasses` (ms) |
+|----------|------------------------------|---------------------------------|
+| Mean     | 91.412                       | 90.259                          |
+| Median   | 86                           | 84                              |
+| SD       | 27.14                        | 27.08                           |
+
+My interpretation of this, **before reading** the answer, is like this—
+1. When we implement a prototype, an object actually *gets* the inherited properties. So when looked for `anObject.inheritedProperty`, it does not need to look way up the chain.
+2. My benchmarking process was specially bad. I think it started when no other CPU-heavy process was running in my PC. Then I started some Edge tabs for a bit of browsing—which occupied CPU, and that resulted in ugly-high standard deviations.
+
+**Actual Answer:** This is also close to what I thought. Modern JS engines are well optimized, and objects can 'remember' from where it got an inherited property. So when requested for the second time, it has become optimized.
