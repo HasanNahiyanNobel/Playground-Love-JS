@@ -415,5 +415,5 @@ My interpretation of this, **before reading** the answer, is like this—
 
 
 
-## F.prototype
-Had a hard time understanding this concept. <span style="color: orange">I wish to revisit this later.</span> ⚠
+## F.prototype and Native Prototypes
+Had a hard time understanding this concept. <span style="color: orange">I wish to revisit both these chapters later.</span> ⚠
