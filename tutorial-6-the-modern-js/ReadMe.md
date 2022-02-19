@@ -415,5 +415,5 @@ My interpretation of this, **before reading** the answer, is like this—
 
 
 
-## F.prototype and Native Prototypes
-Had a hard time understanding this concept. <span style="color: orange">I wish to revisit both these chapters later.</span> ⚠
+## F.prototype, Native Prototypes, Prototype methods, objects without __proto__
+Had a hard time understanding these concepts. <span style="color: orange">I wish to revisit these three chapters later.</span> ⚠
