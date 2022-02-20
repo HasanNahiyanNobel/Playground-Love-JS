@@ -12,24 +12,24 @@
 ## Object References and Copying
 And I misunderstood [this](https://javascript.info/object-copy) for a long time! Objects are copied by reference, so they say:
 ```javascript
-let user = {name: 'John'};
+let user = {name: `John`};
 
 let admin = user;
 
-admin.name = 'Pete'; // changed by the "admin" reference
+admin.name = `Pete`; // changed by the "admin" reference
 
-alert(user.name); // 'Pete', changes are seen from the "user" reference
+alert(user.name); // `Pete`, changes are seen from the "user" reference
 ```
 
 Sure, and I thought this would be work too:
 ```javascript
-let user = {name: 'John'};
+let user = {name: `John`};
 
 let admin = user;
 
-admin = {name: 'Pete'}; // initialized a whole new object
+admin = {name: `Pete`}; // initialized a whole new object
 
-alert(user.name); // I thought this would be 'Pete'!
+alert(user.name); // I thought this would be `Pete`!
 ```
 
 But as I see, this is not how references work! When a whole new object is initialized, the reference is essentially changed, so that does not impact the `user` object here.
@@ -40,7 +40,7 @@ But as I see, this is not how references work! When a whole new object is initia
 ## Numbers
 ### Rough Notes
 * `let billion = 1_000_000_000`: A sweet way to write large numbers. JS just ignores the underscores inside a number.
-* And of course, the sweeter way `let billion = 1e9` exists too!'
+* And of course, the sweeter way `let billion = 1e9` exists too!
 * Knew, but still, `trunc` and `floor` is not the same—to be exact—in case of negative numbers.
 
 ### How detect whether the input is a number?
@@ -172,9 +172,9 @@ Corresponding Task: https://javascript.info/closure#is-variable-visible
 [This](https://javascript.info/closure#sort-by-field) problem initially looked simple, with an immediate solution like this:
 ```javascript
 let users = [
-  {name: 'John', age: 20, surname: 'Johnson'},
-  {name: 'Pete', age: 18, surname: 'Peterson'},
-  {name: 'Ann', age: 19, surname: 'Hathaway'},
+  {name: `John`, age: 20, surname: `Johnson`},
+  {name: `Pete`, age: 18, surname: `Peterson`},
+  {name: `Ann`, age: 19, surname: `Hathaway`},
 ];
 
 function byField(fieldName) {
@@ -184,9 +184,9 @@ function byField(fieldName) {
 
 This *is* the correct solution, but the problem was with checking. I tried it like this:
 ```javascript
-users.sort(byField('name'));
+users.sort(byField(`name`));
 console.log(users);
-users.sort(byField('age'));
+users.sort(byField(`age`));
 console.log(users);
 ```
 
@@ -194,9 +194,9 @@ And surprisingly, both the console logs are printed being sorted by age.
 
 If I swap the sorts:
 ```javascript
-users.sort(byField('age'));
+users.sort(byField(`age`));
 console.log(users);
-users.sort(byField('name'));
+users.sort(byField(`name`));
 console.log(users);
 ```
 
@@ -204,10 +204,10 @@ Then both the logs are printed being sorted by name. It seems like the last sort
 
 So I tried to add a debugger:
 ```javascript
-users.sort(byField('name'));
+users.sort(byField(`name`));
 console.log(users);
 debugger;
-users.sort(byField('age'));
+users.sort(byField(`age`));
 console.log(users);
 ```
 
