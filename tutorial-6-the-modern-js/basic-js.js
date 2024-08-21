@@ -36,6 +36,12 @@ function setColourTheme(colourScheme) {
  * Execution Point of the Script
  ******************************************************************************/
 
+// Set colour theme to dark if initially the device is in dark mode.
+// Concept from: https://stackoverflow.com/a/57795495
+if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+  setColourTheme(DARK_MODE);
+}
+
 // Listen to light/dark mode change, and set theme accordingly.
 // Concept from: https://stackoverflow.com/a/57795495
 window.matchMedia(`(prefers-color-scheme: dark)`).
