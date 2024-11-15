@@ -1,5 +1,9 @@
 # Learning Notes
 
+
+
+
+## Introduction
 This repository contains my personal notes on learning JavaScript, based on the
 concepts and exercises provided
 by [The Modern JavaScript Tutorial](https://javascript.info). It covers
