@@ -1,10 +1,7 @@
 /*******************************************************************************
- * Constants and Variables
+ * Constants
  ******************************************************************************/
-const MASTER_DIV = document.getElementById(`master-div`);
 const OUTPUT_DIV = document.getElementById('output-div');
-const LIGHT_MODE = `light`;
-const DARK_MODE = `dark`;
 
 /*******************************************************************************
  * Functions
@@ -19,34 +16,29 @@ function printOutput(output) {
 }
 
 /**
- * Sets light/dark mode when the user-device mode changes.
- * @param colourScheme Mode to be set (light or dark).
+ * Sets the page's color theme based on the device's preferred color scheme.
+ *
+ * - If the device prefers a dark theme, the `data-bs-theme` attribute of the
+ * `<html>` element is set to "dark".
+ * - If the device prefers a light theme, the `data-bs-theme` attribute is set
+ * to "light".
+ *
+ * This function also dynamically updates the theme whenever the device's preferred
+ * color scheme changes.
  */
-function setColourTheme(colourScheme) {
-  if (colourScheme === DARK_MODE) {
-    MASTER_DIV.classList.add(`bg-dark`);
-    MASTER_DIV.classList.add(`text-light`);
-  } else {
-    MASTER_DIV.classList.remove(`bg-dark`);
-    MASTER_DIV.classList.remove(`text-light`);
-  }
+function setThemeBasedOnDevice() {
+  const preferredColourScheme = window.matchMedia(
+      `(prefers-color-scheme: dark)`).matches ? `dark` : `light`;
+  document.documentElement.setAttribute(`data-bs-theme`, preferredColourScheme);
 }
 
 /*******************************************************************************
  * Execution Point of the Script
  ******************************************************************************/
 
-// Set colour theme to dark if initially the device is in dark mode.
-// Concept from: https://stackoverflow.com/a/57795495
-if (window.matchMedia &&
-    window.matchMedia('(prefers-color-scheme: dark)').matches) {
-  setColourTheme(DARK_MODE);
-}
+// Set the initial theme.
+setThemeBasedOnDevice();
 
-// Listen to light/dark mode change, and set theme accordingly.
-// Concept from: https://stackoverflow.com/a/57795495
+// Listen for changes in the device's color scheme and update the theme.
 window.matchMedia(`(prefers-color-scheme: dark)`).
-    addEventListener(`change`, event => {
-      const currentColourScheme = event.matches ? DARK_MODE : LIGHT_MODE;
-      setColourTheme(currentColourScheme);
-    });
+    addEventListener(`change`, setThemeBasedOnDevice);
