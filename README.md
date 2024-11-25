@@ -4,12 +4,36 @@
 
 
 ## Introduction
+
 This repository contains my personal notes on learning JavaScript, based on the
 concepts and exercises provided
 by [The Modern JavaScript Tutorial](https://javascript.info). It covers
 foundational JavaScript concepts, syntax, and techniques, along with hands-on
 examples to reinforce learning. This is a work-in-progress as I explore new
 topics and deepen my understanding of JavaScript.
+
+
+
+
+## Function Basics
+
+This is how we pass default values to a function in JavaScript:
+
+```javascript
+/**
+ * Prints a greeting message with the provided name.
+ *
+ * @param {string} [name='Anonymous'] - The name to include in the greeting
+ * message.
+ */
+function printName(name=`Anonymous`) {
+    printOutput(`<p>Hello, ${name}!</p>`);
+}
+
+// Test the printName function.
+printName(`John Lennon`); // Prints the passed value "John Lennon".
+printName(); // Prints the default value "Anonymus".
+```
 
 
 
