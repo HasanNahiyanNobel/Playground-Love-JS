@@ -61,8 +61,7 @@ printName(); // Prints the default value "Anonymus".
 
 ## Ninja Code
 
-[This](https://javascript.info/ninja-code) is a *really* good documentation.
-Every single coders on Earth should read a doc like this.
+[This](https://javascript.info/ninja-code) is a good article.
 
 
 
