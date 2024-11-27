@@ -22,11 +22,15 @@
 
 <script>
   function pow(x, n) {
-    // Function code is to be written.
+    if (n < 0) return NaN;
+    if (Math.round(n) !== n) return NaN;
+    let result = 1;
+    for (let i = 0; i < n; i++) result *= x;
+    return result;
   }
 </script>
 
-<script src="tasks/03-code-quality/05-testing-mocha.js"></script> <!-- The script with tests (describe, it...). -->
+<script src="05-testing-mocha.js"></script> <!-- The script with tests (describe, it...). -->
 
 <div id="mocha">
   <!-- Output div for the test results. -->
