@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Title -->
+  <title>Playground Love, JS</title>
+  <!-- Mocha CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.css">
+  <!-- Mocha Framework -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.js"></script>
+  <script>
+    mocha.setup('bdd'); // Minimal setup.
+  </script>
+  <!-- Chai -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/3.5.0/chai.js"></script>
+  <script>
+    let assert = chai.assert;
+  </script>
+</head>
+
+<body>
+
+<script>
+  function pow(x, n) {
+    if (n < 0) return NaN;
+    if (Math.round(n) !== n) return NaN;
+    let result = 1;
+    for (let i = 0; i < n; i++) result *= x;
+    return result;
+  }
+</script>
+
+<script src="05-testing-mocha.js"></script> <!-- The script with tests (describe, it...). -->
+
+<div id="mocha">
+  <!-- Output div for the test results. -->
+</div>
+
+<!-- Run Tests! -->
+<script>
+  mocha.run();
+</script>
+
+</body>
+
+</html>

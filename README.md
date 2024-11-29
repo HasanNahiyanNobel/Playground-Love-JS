@@ -15,6 +15,30 @@ topics and deepen my understanding of JavaScript.
 
 
 
+## Table of Contents
+
+1. [Function Basics](#function-basics)
+2. [Ninja Code](#ninja-code)
+3. [Object References and Copying](#object-references-and-copying)
+4. [Numbers](#numbers)
+5. [Strings](#strings)
+6. [Arrays](#arrays)
+7. [Array Methods](#array-methods)
+8. [Map and Set](#map-and-set)
+9. [Date and Time](#date-and-time)
+10. [Recursion](#recursion)
+11. [Rest Parameters and Spread Syntax](#rest-parameters-and-spread-syntax)
+12. [Variable Scope, Closure](#variable-scope-closure)
+13. [The Old `var`](#the-old-var)
+14. [Function object, NFE](#function-object-nfe)
+15. [Scheduling Functions](#scheduling-functions)
+16. [Decorators and Forwarding, Call/Apply](#decorators-and-forwarding-callapply)
+17. [Function Binding](#function-binding)
+18. [Prototypal Inheritance](#prototypal-inheritance)
+
+
+
+
 ## Function Basics
 
 This is how we pass default values to a function in JavaScript:
@@ -26,8 +50,8 @@ This is how we pass default values to a function in JavaScript:
  * @param {string} [name='Anonymous'] - The name to include in the greeting
  * message.
  */
-function printName(name=`Anonymous`) {
-    printOutput(`<p>Hello, ${name}!</p>`);
+function printName(name = `Anonymous`) {
+  printOutput(`<p>Hello, ${name}!</p>`);
 }
 
 // Test the printName function.
@@ -35,13 +59,9 @@ printName(`John Lennon`); // Prints the passed value "John Lennon".
 printName(); // Prints the default value "Anonymus".
 ```
 
-
-
-
 ## Ninja Code
 
-[This](https://javascript.info/ninja-code) is a *really* good documentation.
-Every single coders on Earth should read a doc like this.
+[This](https://javascript.info/ninja-code) is a good article.
 
 
 

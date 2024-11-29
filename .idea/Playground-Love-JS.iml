@@ -12,5 +12,7 @@
     <orderEntry type="library" name="materialize" level="application" />
     <orderEntry type="library" name="bootstrap" level="application" />
     <orderEntry type="library" name="bootstrap" level="application" />
+    <orderEntry type="library" name="mocha" level="application" />
+    <orderEntry type="library" name="chai" level="application" />
   </component>
 </module>
