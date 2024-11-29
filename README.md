@@ -72,25 +72,25 @@ And I misunderstood [this](https://javascript.info/object-copy) for a long time!
 Objects are copied by reference, so they say:
 
 ```javascript
-let user = {name: 'John'};
+let user = {name: `John`};
 
 let admin = user;
 
-admin.name = 'Pete'; // changed by the "admin" reference
+admin.name = `Pete`; // Changed by the "admin" reference
 
-alert(user.name); // 'Pete', changes are seen from the "user" reference
+printOutput(user.name); // `Pete`, changes are seen from the "user" reference
 ```
 
 Sure, and I thought this would be work too:
 
 ```javascript
-let user = {name: 'John'};
+let user = {name: `John`};
 
 let admin = user;
 
-admin = {name: 'Pete'}; // initialized a whole new object
+admin = {name: `Pete`}; // Initialized a whole new object
 
-alert(user.name); // I thought this would be 'Pete'!
+printOutput(user.name); // I thought this would be `Pete`!
 ```
 
 But as I see, this is not how references work! When a whole new object is
