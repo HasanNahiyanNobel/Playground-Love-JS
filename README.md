@@ -76,9 +76,9 @@ let user = {name: `John`};
 
 let admin = user;
 
-admin.name = `Paul`; // Changed by the "admin" reference
+admin.name = `Paul`; // Changed by the `admin` reference
 
-console.log(user.name); // `Paul`, changes are seen from the "user" reference
+console.log(user.name); // "Paul", changes are seen from the `user` reference
 ```
 
 Sure, and I thought this would be work too:
@@ -90,7 +90,7 @@ let admin = user;
 
 admin = {name: `Paul`}; // Initialized a whole new object
 
-console.log(user.name); // I thought this would be `Paul`!
+console.log(user.name); // I thought this would be "Paul"!
 ```
 
 But as I see, this is not how references work! When a whole new object is
