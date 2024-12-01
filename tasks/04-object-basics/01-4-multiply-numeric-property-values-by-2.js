@@ -8,15 +8,15 @@ let menu = {
 };
 
 // Print the original demo object.
-printOutput(`<p class="lead">Original Demo Object</p>`);
-printObject(menu);
+console.log(`Original Demo Object`);
+console.log(menu);
 
 // Apply the function to multiply the numeric values by 2.
 multiplyNumeric(menu);
 
 // Print the modified demo object.
-printOutput(`<p class="lead">Modified Demo Object</p>`);
-printObject(menu);
+console.log(`Modified Demo Object`);
+console.log(menu);
 
 // Function Declaration(s).
 /**
@@ -33,19 +33,5 @@ function multiplyNumeric(obj) {
     if (typeof obj[key] === `number`) {
       obj[key] *= 2;
     }
-  }
-}
-
-/**
- * Prints the properties and values of an object.
- *
- * This function iterates over all properties of the given object and prints
- * each key-value pair as an HTML element.
- *
- * @param {Object} obj - The object whose properties and values will be printed.
- */
-function printObject(obj) {
-  for (let key in obj) {
-    printOutput(`<p>${key}: ${obj[key]}</p>`);
   }
 }

@@ -13,9 +13,9 @@ let sum = undefined; // Variable to store the sum of the salaries.
 
 // Print sum of the salaries.
 sum = sumOfTheSalaries(salaries);
-printOutput(`Sum of the salaries: ${sum}<br>`);
+console.log(`Sum of the salaries: ${sum}`);
 sum = sumOfTheSalaries(emptySalaries);
-printOutput(`Sum of the empty salaries: ${sum}`);
+console.log(`Sum of the empty salaries: ${sum}`);
 
 // Function Definition(s)
 /**

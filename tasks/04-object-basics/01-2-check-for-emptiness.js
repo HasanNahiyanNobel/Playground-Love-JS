@@ -1,10 +1,9 @@
 // Task: https://javascript.info/object#check-for-emptiness
 
 let schedule = {}; // An empty object.
-printOutput(isEmpty(schedule));
-printOutput(`<br>`)
+console.log(isEmpty(schedule));
 schedule[`8:30`] = `get up`; // Now the object has a property.
-printOutput(isEmpty(schedule));
+console.log(isEmpty(schedule));
 
 // Function Declaration(s)
 /**
