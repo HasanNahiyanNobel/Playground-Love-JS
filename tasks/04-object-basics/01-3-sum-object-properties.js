@@ -9,7 +9,7 @@ let salaries = {
 
 let emptySalaries = {};
 
-let sum = undefined; // Variable to store the sum of the salaries.
+let sum; // Variable to store the sum of the salaries.
 
 // Print sum of the salaries.
 sum = sumOfTheSalaries(salaries);

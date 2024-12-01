@@ -4,7 +4,7 @@
 let menu = {
   width: 243,
   height: 300,
-  title: "My menu"
+  title: `My menu`
 };
 
 // Print the original demo object.
