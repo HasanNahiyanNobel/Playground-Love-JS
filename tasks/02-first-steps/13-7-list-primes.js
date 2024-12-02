@@ -34,9 +34,9 @@ function isPrime(n) {
 function showPrimes(n) {
   for (let i = 2; i < n; i++) {
     if (!isPrime(i)) continue;
-    printOutput(`<p>${i}</p>`); // A prime
+    console.log(i); // A prime
   }
 }
 
-printOutput(`<p>Prime numbers up to ${N} are:</p>`);  // A header
+console.log(`Prime numbers up to ${N} are:`);  // A header
 showPrimes(N); // Display prime numbers up to N

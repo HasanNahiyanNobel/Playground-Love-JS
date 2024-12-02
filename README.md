@@ -51,12 +51,12 @@ This is how we pass default values to a function in JavaScript:
  * message.
  */
 function printName(name = `Anonymous`) {
-  printOutput(`<p>Hello, ${name}!</p>`);
+   console.log(`Hello, ${name}!`);
 }
 
 // Test the printName function.
 printName(`John Lennon`); // Prints the passed value "John Lennon".
-printName(); // Prints the default value "Anonymus".
+printName(); // Prints the default value "Anonymous".
 ```
 
 ## Ninja Code
@@ -72,25 +72,25 @@ And I misunderstood [this](https://javascript.info/object-copy) for a long time!
 Objects are copied by reference, so they say:
 
 ```javascript
-let user = {name: 'John'};
+let user = {name: `John`};
 
 let admin = user;
 
-admin.name = 'Pete'; // changed by the "admin" reference
+admin.name = `Paul`; // Changed by the `admin` reference
 
-alert(user.name); // 'Pete', changes are seen from the "user" reference
+console.log(user.name); // "Paul", changes are seen from the `user` reference
 ```
 
 Sure, and I thought this would be work too:
 
 ```javascript
-let user = {name: 'John'};
+let user = {name: `John`};
 
 let admin = user;
 
-admin = {name: 'Pete'}; // initialized a whole new object
+admin = {name: `Paul`}; // Initialized a whole new object
 
-alert(user.name); // I thought this would be 'Pete'!
+console.log(user.name); // I thought this would be "Paul"!
 ```
 
 But as I see, this is not how references work! When a whole new object is
