@@ -107,8 +107,8 @@ initialized, the reference is essentially changed, so that does not impact the
 * `let billion = 1_000_000_000`: A sweet way to write large numbers. JS just
   ignores the underscores inside a number.
 * And of course, the sweeter way `let billion = 1e9` exists too!
-* Knew, but still, `trunc` and `floor` is not the same—to be exact—in case of
-  negative numbers.
+* Knew, but still, `trunc` and `floor` is not the same—to be exact—in the case
+  of negative numbers.
 
 ### How Detect Whether the Input Is a Number?
 
