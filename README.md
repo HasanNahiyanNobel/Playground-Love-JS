@@ -130,6 +130,11 @@ from now on.
 
 ## Arrays
 
+### Deque
+
+Arrays in JavaScript allow to add and remove elements from both ends. This is
+called a deque—which is short for double-ended queue.
+
 ### `for..of` vs. `for..in`
 
 `for..of` is specially optimized for arrays, where `for..in` is optimized for
