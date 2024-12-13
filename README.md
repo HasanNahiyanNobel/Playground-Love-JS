@@ -5,6 +5,7 @@
 
 ## Introduction
 
+
 This repository contains my personal notes on learning JavaScript, based on the
 concepts and exercises provided
 by [The Modern JavaScript Tutorial](https://javascript.info). It covers
@@ -41,6 +42,7 @@ topics and deepen my understanding of JavaScript.
 
 ## Function Basics
 
+
 This is how we pass default values to a function in JavaScript:
 
 ```javascript
@@ -51,7 +53,7 @@ This is how we pass default values to a function in JavaScript:
  * message.
  */
 function printName(name = `Anonymous`) {
-   console.log(`Hello, ${name}!`);
+  console.log(`Hello, ${name}!`);
 }
 
 // Test the printName function.
@@ -59,7 +61,11 @@ printName(`John Lennon`); // Prints the passed value "John Lennon".
 printName(); // Prints the default value "Anonymous".
 ```
 
+
+
+
 ## Ninja Code
+
 
 [This](https://javascript.info/ninja-code) is a good article.
 
@@ -68,11 +74,12 @@ printName(); // Prints the default value "Anonymous".
 
 ## Object References and Copying
 
+
 And I misunderstood [this](https://javascript.info/object-copy) for a long time!
 Objects are copied by reference, so they say:
 
 ```javascript
-let user = {name: `John`};
+let user = { name: `John` };
 
 let admin = user;
 
@@ -84,11 +91,11 @@ console.log(user.name); // "Paul", changes are seen from the `user` reference
 Sure, and I thought this would be work too:
 
 ```javascript
-let user = {name: `John`};
+let user = { name: `John` };
 
 let admin = user;
 
-admin = {name: `Paul`}; // Initialized a whole new object
+admin = { name: `Paul` }; // Initialized a whole new object
 
 console.log(user.name); // I thought this would be "Paul"!
 ```
@@ -102,6 +109,7 @@ initialized, the reference is essentially changed, so that does not impact the
 
 ## Numbers
 
+
 ### Rough Notes
 
 * `let billion = 1_000_000_000`: A sweet way to write large numbers. JS just
@@ -110,7 +118,9 @@ initialized, the reference is essentially changed, so that does not impact the
 * Knew, but still, `trunc` and `floor` is not the same—to be exact—in the case
   of negative numbers.
 
+
 ### How Detect Whether the Input Is a Number?
+
 
 [This](https://javascript.info/number#repeat-until-the-input-is-a-number)
 and [this](https://javascript.info/array#sum-input-numbers) made me think, a
@@ -124,18 +134,26 @@ finally [answered in Stack Overflow](https://stackoverflow.com/a/68821383/660677
 
 ## Strings
 
+
 As I understand, single and double quote string in JS exists only for historical
 reasons. Backticks have more advantages, and I think I'm going to use backticks
 from now on.
 
+
+
+
 ## Arrays
 
+
 ### Deque
+
 
 Arrays in JavaScript allow to add and remove elements from both ends. This is
 called a deque—which is short for double-ended queue.
 
+
 ### `for..of` vs. `for..in`
+
 
 `for..of` is specially optimized for arrays, where `for..in` is optimized for
 general objects. Because of this, the second one is 10-100 times slower
@@ -143,7 +161,9 @@ according to [this](https://javascript.info/array#loops) source.
 
 Also, as that source notes, `for..in` has another specific problem too.
 
+
 ### Others
+
 
 So [this](https://javascript.info/array#a-word-about-length) says, the simplest
 way to clear the array is: `arr.length = 0`. This may become helpful in certain
@@ -154,7 +174,9 @@ cases.
 
 ## Array Methods
 
+
 ### Types of Methods
+
 
 Summary of this section will be useful, perhaps. There is a "cheat sheet" which
 separated the methods into following types:
@@ -172,7 +194,9 @@ Of course, I can use `for` loop in any of these cases. But as I learn from this
 book—the functions are *fine-tuned* to do their specific jobs, and thus much
 faster.
 
+
 ### To Shuffle an Array
+
 
 [This](https://javascript.info/array-methods#shuffle-an-array) problem, at
 first, looked very trivial. Solved it using `array.sort()`, and got very
@@ -200,27 +224,39 @@ My mind is blowing out.
 
 ## Map and Set
 
+
 As they quote:
 > The alternative to `Set` could be an array of users, and the code to check for
 > duplicates on every insertion using arr.find. But the performance would be
 > much worse, because this method walks through the whole array checking every
 > element. `Set` is much better optimized internally for uniqueness checks.
 
+
+
+
 ## Date and Time
 
+
 ### Not `getYear()`, But `getFullYear()`
+
 
 As they explain:
 > Many JavaScript engines implement a non-standard method `getYear()`. This
 > method is deprecated. It returns 2-digit year sometimes. Please never use it.
 > There is `getFullYear()` for the year.
 
+
 ### Others
+
 
 `Date.now()` gives the current time in milliseconds, *without* creating an
 intermediate `Date` object—thus giving a better performance.
 
+
+
+
 ## Recursion
+
 
 Now I know, I knew nothing about recursion. A simple-looking recursion takes
 ages more than its loop counterpart. Why do we implement recursion in the first
@@ -229,15 +265,23 @@ place anyway?
 An [interesting case](https://javascript.info/recursion#output-a-single-linked-list-in-the-reverse-order),
 where the loop version essentially does the same job as recursion.
 
+
+
+
 ## Rest Parameters and Spread Syntax
 
 1. The `...` in JavaScript means either rest parameters or spread syntax.
 2. Spread syntax is really useful while copying an object like
    `let objNew = { ...objOld };`
 
+
+
+
 ## Variable Scope, Closure
 
+
 ### Surprise Optimizations of V8, and Debugging
+
 
 Here's some beauty, again. I knew a bit about lexical environments due to our
 damned Compiler course. Now I came to know, how V8 engine optimizes these
@@ -247,7 +291,9 @@ not used—it is removed.
 And that causes surprises in debug mode, so much so that the authors say, if we
 are debugging Chrome/Edge/Opera, sooner or later we will meet this. :3
 
+
 ### Dead Zones
+
 
 Programming languages never fail to surprise. Like the following snippet:
 
@@ -287,16 +333,18 @@ Details: https://javascript.info/closure#step-1-variables
 
 Corresponding Task: https://javascript.info/closure#is-variable-visible
 
+
 ### Another Weird Behaviour of JavaScript
+
 
 [This](https://javascript.info/closure#sort-by-field) problem initially looked
 simple, with an immediate solution like this:
 
 ```javascript
 let users = [
-  {name: 'John', age: 20, surname: 'Johnson'},
-  {name: 'Pete', age: 18, surname: 'Peterson'},
-  {name: 'Ann', age: 19, surname: 'Hathaway'},
+  { name: 'John', age: 20, surname: 'Johnson' },
+  { name: 'Pete', age: 18, surname: 'Peterson' },
+  { name: 'Ann', age: 19, surname: 'Hathaway' },
 ];
 
 function byField(fieldName) {
@@ -348,6 +396,7 @@ and when resumed, the next print is sorted by age.
 
 ## The Old `var`
 
+
 Source: https://javascript.info/var
 
 1. `var` has no block-scope—that's pretty interesting. A simple `i` in for loop
@@ -356,9 +405,14 @@ Source: https://javascript.info/var
 3. All the `var` declarations are hoisted to the top. Not so much ugly—but who
    on Earth codes like this?
 
+
+
+
 ## Function object, NFE
 
+
 ### On Overriding `toString` of a function
+
 
 [This](https://javascript.info/function-object#sum-with-an-arbitrary-amount-of-brackets)
 task made me think a lot. Came up with a non-pretty solution, then adapted the
@@ -372,7 +426,7 @@ function testFunc() {
   return 0;
 }
 
-testFunc.toString = function() {
+testFunc.toString = function () {
   return `A string!`;
 };
 ```
@@ -395,6 +449,7 @@ Still couldn't figure out how to deal with this.
 
 ## Scheduling Functions
 
+
 Both `setTimeout` and `setInterval` references to the outer lexical
 environment—that's expected.
 
@@ -407,18 +462,24 @@ until,
    `clearInterval` is not called, `setInterval` will run indefinitely, and the
    outer lexical environment should also remain for an indefinite time.
 
+
+
+
 ## Decorators and Forwarding, Call/Apply
+
 
 Had some tough time while trying to understand this chapter. **Need to review
 later.**
 
+
 ### How Decorators Can Add Properties to a Function
+
 
 Say, we have a decorator like this:
 
 ```javascript
 function decorator(func) {
-  let wrapper = function(...args) {
+  let wrapper = function (...args) {
     func.apply(this, args);
   };
 
@@ -432,8 +493,10 @@ function decorator(func) {
 
 ### Arguments of a Function
 
+
 Seems that when a function is called, it has an `arguments` property. I tried to
 get an insight how this property works.
+
 
 #### Test 1
 
@@ -465,7 +528,9 @@ Arguments(4) [9, 3, 7, 0, callee: ƒ, Symbol(Symbol.iterator): ƒ]
 
 So now I know that `arguments` is an object, which is also iterable.
 
+
 #### Test 2
+
 
 Just tried to see, what `arguments` look like *after* the function's execution:
 
@@ -476,7 +541,9 @@ console.log(testFunc.arguments); // And this prints `null`!
 This means, `arguments` behave like `this`. It only has value when a function is
 called—which is great.
 
+
 #### Test 3
+
 
 What if the function was *declared* to have an argument?
 
@@ -494,7 +561,9 @@ testFunc(9, 3, 7, 0);
 This means, no matter how the function is declared, `arguments` really have all
 the arguments passed.
 
+
 #### Test 4
+
 
 And what if the function has rest parameters?
 
@@ -516,6 +585,7 @@ This also perfectly makes sense.
 
 ## Function Binding
 
+
 Lesson: https://javascript.info/bind
 
 Felt this too hard, probably because I couldn't grasp the previous chapter
@@ -527,6 +597,7 @@ properly.
 
 
 ## Prototypal Inheritance
+
 
 Problem: https://javascript.info/prototype-inheritance#searching-algorithm
 
